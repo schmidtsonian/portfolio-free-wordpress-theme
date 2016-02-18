@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+    head
+        title Estebanco
+
+        meta(name="description" content="")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        
+        link(rel="icon", type="ico", href="", sizes='32x32')
+        link(rel="stylesheet", type="text/css", href="/css/main.css")
+
+    body
+        include _loader
+        #main-container.main-container.full
+            block body
+        include _menu
+        script.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', '', 'auto');
+            ga('send', 'pageview');
+        script(src="/js/vendor.js")
+        script(src="/js/main.js")
