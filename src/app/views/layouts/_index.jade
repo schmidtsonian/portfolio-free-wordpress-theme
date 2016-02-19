@@ -10,10 +10,10 @@ html(lang="en")
         link(rel="stylesheet", type="text/css", href="/css/main.css")
 
     body
-        include _loader
+        block header
         #main-container.main-container.full
-            block body
-        include _menu
+        include _footer
+        include _loader
         script.
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
