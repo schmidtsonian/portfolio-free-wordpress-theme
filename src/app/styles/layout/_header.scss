@@ -7,15 +7,30 @@
         @include size(60px 90px);
         @include position(absolute, -220px 20px null null);
         cursor: pointer;
+        z-index: 101;
         span{
             display: block;
             background: black;
             @include size(40px 5px);
+            @include transition(all .35s $ease-out-cubic);
             &:nth-child(1){
                 top: -30px;
             }
             &:nth-child(3){
                 bottom: -30px;
+            }
+        }
+        &.active span{
+            &:nth-child(2){
+                width: 0;
+            }
+            &:nth-child(1){
+                top: 0;
+                @include transform(rotate(405deg))
+            }
+            &:nth-child(3){
+                bottom: 0;
+                @include transform(rotate(-405deg))
             }
         }
     }
@@ -25,6 +40,7 @@
     .main-header__nav{
         height: 90px;
         float: right;
+        @include transition(right .15s $ease-out-cubic);
         a{
             display: inline-block;
             text-transform: uppercase;
@@ -75,6 +91,9 @@
             &:hover:after{
                 display: none;
             }
+        }
+        &.active{
+            right: 0;
         }
     }
     .main-header__button{

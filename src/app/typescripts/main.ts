@@ -9,3 +9,12 @@
 // 	app = new IndexApp();
 // 	app.init();
 // });
+$(function() {
+	
+    $("#main-header__button").click(function(){
+
+        $("#main-header__nav").toggleClass("active");
+        $("#main-header__button").toggleClass("active");
+        return false;
+    });
+});
