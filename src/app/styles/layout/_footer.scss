@@ -1,0 +1,13 @@
+.main-footer{
+    @include padding(30px 0);
+    @include size(100% auto);
+    background-color: $color-black;
+    position: absolute;
+    bottom: 0;
+    .sidebar{
+        padding-bottom: 10px;
+        &:last-child{
+            padding: 0;
+        }
+    }
+}

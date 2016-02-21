@@ -21,10 +21,14 @@
 
 @import
 	'layout/loader',
-	'layout/header';
+	'layout/header',
+	'layout/footer';
 
 @import
-  'components/buttons';
+  'components/buttons',
+  'components/banner-home',
+  'components/sidebar-footer-contact',
+  'components/sidebar-footer-copyright';
 
 @import
   'pages/home';

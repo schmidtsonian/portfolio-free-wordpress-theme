@@ -1,7 +1,10 @@
 .main-header{
     line-height: 90px;
-    @include padding(50px);
+    @include padding(25px 50px);
+    @include margin(0 auto);
     @include size(auto 90px);
+    max-width: 1280px;
+    position: relative;
 }
     .main-header__button{
         @include size(60px 90px);
@@ -48,6 +51,7 @@
             position: relative;
             @include padding(0 10px);
             @include margin(0 10px);
+            @include transition(all .35s $ease-out-cubic);
             &:after{
                 content: "";
                 display: block;

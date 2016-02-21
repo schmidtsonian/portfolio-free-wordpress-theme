@@ -1,0 +1,11 @@
+.sidebar__footer-contact{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: em(12);
+    strong{
+        color: white;
+    }
+    a{
+        color: $color-brown-light;
+    }
+}

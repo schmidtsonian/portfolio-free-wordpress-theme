@@ -3,6 +3,7 @@ $em-base: 14px;
 
 body, html {
   height: 100%;
+  min-height: 600px;
 }
 
 body {
@@ -10,13 +11,20 @@ body {
   font-weight: 400;
   font-size: em(16);
   line-height: 1.6em;
+  letter-spacing: 0.05em;
   color: $color-black;
   border: 20px solid $color-cream;
-  overflow: hidden;
+  position: relative;
 }
 a{
     text-decoration: none;
     color: $color-black;
+}
+.main-container{
+    max-width: 1280px;
+    padding: 25px 50px;
+    margin: 0 auto;
+    position: relative;
 }
 
 @media screen and (max-width: 1024px){
