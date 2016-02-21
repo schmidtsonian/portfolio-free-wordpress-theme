@@ -1,0 +1,83 @@
+.main-header{
+    line-height: 90px;
+    @include padding(50px);
+    @include size(auto 90px);
+}
+    .main-header__button{
+        @include size(60px 90px);
+        @include position(absolute, -220px 20px null null);
+        cursor: pointer;
+        span{
+            display: block;
+            background: black;
+            @include size(40px 5px);
+            &:nth-child(1){
+                top: -30px;
+            }
+            &:nth-child(3){
+                bottom: -30px;
+            }
+        }
+    }
+    .main-header__logo{
+        float: left
+    }
+    .main-header__nav{
+        height: 90px;
+        float: right;
+        a{
+            display: inline-block;
+            text-transform: uppercase;
+            text-align: center;
+            position: relative;
+            @include padding(0 10px);
+            @include margin(0 10px);
+            &:after{
+                content: "";
+                display: block;
+                opacity: 0;
+                background-color: $color-brown-light;
+                @include size(100% 2px);
+                @include position(absolute, null null 0 0  );
+                @include transition(all .35s $ease-out-cubic);
+            }
+            &:hover:after{
+                bottom: 25px;
+                opacity: 1;
+            }
+        }
+    }
+@media screen and (max-width: 1024px){
+    .main-header{
+        @include padding(20px);
+    }
+    .main-header__nav a{
+        @include padding(0 5px);
+        @include margin(0 5px);
+        font-size: em(12);
+    }
+}
+@media screen and (max-width: 768px){
+    .main-header__nav{
+        @include position(fixed, 0 100% null null);
+        @include size(100% 100%);
+        z-index: 100;
+        @include display(flex);
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex-direction(column);
+        background-color: $color-cream;
+        a{
+            display: block;
+            line-height: em(40);
+            @include padding(0);
+            @include margin(0);
+            &:hover:after{
+                display: none;
+            }
+        }
+    }
+    .main-header__button{
+        top: 20px;
+    }
+}
