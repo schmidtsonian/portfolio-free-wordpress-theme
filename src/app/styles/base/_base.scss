@@ -16,10 +16,6 @@ body {
   border: 20px solid $color-cream;
   position: relative;
 }
-a{
-    text-decoration: none;
-    color: $color-black;
-}
 .main-container{
     max-width: 1280px;
     padding: 25px 50px;
@@ -30,5 +26,8 @@ a{
 @media screen and (max-width: 1024px){
     body{
           border-width: 0;
+    }
+    .main-container{
+        @include padding(20px);
     }
 }

@@ -1,1 +1,27 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,700italic,400italic);
+@import url(https://fonts.googleapis.com/css?family=Lato:100,400,700,700italic,400italic,100italic);
+
+
+.font-title,
+.font-subtitle{
+    font-weight: 600;
+}
+
+.font-title{
+    font-size: em(60);
+    text-transform: uppercase;
+    padding-bottom: 40px;
+}
+.font-subtitle{
+    font-size: em(28);
+}
+strong{
+    font-weight: 700;
+}
+i{
+    font-style: italic;
+}
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-black;
+}

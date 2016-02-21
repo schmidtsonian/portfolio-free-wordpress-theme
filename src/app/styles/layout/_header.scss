@@ -46,7 +46,6 @@
         @include transition(right .15s $ease-out-cubic);
         a{
             display: inline-block;
-            text-transform: uppercase;
             text-align: center;
             position: relative;
             @include padding(0 10px);

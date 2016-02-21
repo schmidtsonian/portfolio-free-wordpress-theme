@@ -7,11 +7,11 @@
 	'bourbon';
 
 @import
-	'base/reset',
-	'base/typography';
+	'base/reset';
 
 @import
 	'utils/variables',
+	'base/typography',
 	'utils/functions',
 	'utils/mixins',
 	'utils/placeholders';
