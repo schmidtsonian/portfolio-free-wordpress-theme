@@ -15,6 +15,10 @@ body {
   border: 20px solid $color-cream;
   position: relative;
 }
+
+img{
+    background-color: $color-cream;
+}
 .main-container{
     max-width: 1280px;
     padding: 25px 50px;
