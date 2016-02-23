@@ -1,0 +1,16 @@
+extends layouts/_index.jade
+
+block body
+    // ====== Portfolio blog page ======
+    #page__about.page.page__blog__portfolio
+        section.page__section
+            // ====== Nav filters ======
+            +nav_filters([
+                { href: "/blog-portfolio.html", title: "all", class:"active" },
+                { href: "#", title: "html" },
+                { href: "#", title: "css" },
+                { href: "#", title: "javascript" }
+            ])
+            // ====== /Nav filters ======
+            
+    // ====== /Portfolio blog page ======

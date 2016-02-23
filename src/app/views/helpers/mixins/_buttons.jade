@@ -1,0 +1,7 @@
+
+mixin nav_filters(array)
+    nav.page__nav-filters
+        ul
+            each val in array
+                li
+                    a(href=val.href, title=val.title, class=val.class).page-load= val.title
