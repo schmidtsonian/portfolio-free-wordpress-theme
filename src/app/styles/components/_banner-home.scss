@@ -6,7 +6,7 @@
     background-size: cover;
     overflow: hidden;
     position: relative;
-    @include transition(all .75s $ease-out-cubic);
+    @include transition(all .65s $ease-out-cubic);
     .font-title,
     .font-subtitle{
         color: white;
@@ -30,6 +30,25 @@
         .font-subtitle{
             @include transform(translateX(225px));
         }
+        .b{
+            opacity: 1;
+            @include transform(translatey(0) translateX(0));
+        }
+        .b1{
+            @include transition-delay(0.15s);
+        }
+        .b2{
+            @include transition-delay(0.2s);
+        }
+        .b3{
+            @include transition-delay(0.25s);
+        }
+        .b4{
+            @include transition-delay(0.3s);
+        }
+        .b5{
+            @include transition-delay(0.35s);
+        }
     }
 }
     .banner__page-home__bio{
@@ -38,7 +57,7 @@
         left: -260px;
         @include padding(25px 25px);
         box-shadow: 5px 0px 8px $color-black;
-        @include transition(all .65s $ease-out-cubic);
+        @include transition(all .55s $ease-out-cubic);
         p,a{
             
             color: white;
@@ -51,6 +70,11 @@
         }
         strong{
             font-size: em(18);
+        }
+        .b{
+            opacity: 0;
+            @include transform(translatey(20px) translateX(-20px));
+            @include transition(all .55s $ease-out-cubic);
         }
     }
 @media screen and (max-width: 768px){

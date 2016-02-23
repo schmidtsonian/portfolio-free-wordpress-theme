@@ -1,0 +1,19 @@
+extends layouts/_index.jade
+
+
+block body
+    // ====== About page ======
+    #page__about.page.page__about.cols.clearfix
+        .cols__2
+            header.page__header
+                h1.font-title__page Hello
+            section.page__section
+                p Id pariatur magna eu culpa consequat sint incididunt in deserunt aliquip occaecat ullamco. Sit culpa proident est mollit officia minim proident sint veniam labore. Laborum velit sint minim ipsum velit.
+                p Nulla officia ea non non cillum id tempor mollit consequat magna consectetur et. 
+        .cols__2
+            +block_info_1x1({name:"Skill", title:"Web developer", description:"Id pariatur magna eu culpa consequat sint incididunt"})
+            +block_info_1x1_thumb({src:"/images/profile.png"})
+            +block_info_1x1({color:"brown", name:"Skill", title:"Web developer", description:"Id pariatur magna eu culpa consequat sint incididunt"})
+            +block_info_1x1({name:"Skill", title:"Web developer", description:"Id pariatur magna eu culpa consequat sint incididunt"})
+    
+    // ====== /About page ======

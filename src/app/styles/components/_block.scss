@@ -1,0 +1,28 @@
+.block__1x1{
+    width: calc(50% - 10px);
+    height: 200px;
+    margin: 5px;
+    float: left;
+    color: white;
+    background-color: $color-brown-light;
+    background-position: center center;
+    background-size: cover;
+    h4{
+        padding: 10px 30px;
+        font-weight: 100;
+        font-size: em(12);
+        text-transform: uppercase;
+        opacity: .8;
+    }
+    h2,p{
+        padding: 0 30px 10px 30px;
+    }
+    p{
+        font-size: em(10);
+        line-height: 1.5em;
+        font-weight: 100;
+    }
+}
+.block__color--brown{
+    background-color: $color-brown;
+}

@@ -1,0 +1,20 @@
+mixin block_info_1x1(params)
+    .block.block__1x1(class="block__color--#{params.color}")
+        h4
+            i=params.name
+        h2=params.title
+        p=params.description
+
+mixin block_info_1x1_thumb(params)
+    .block.block__1x1(style="background-image:url(#{params.src});")
+
+mixin block_info_2x1_post(params)
+    .block
+
+mixin block_info_2x1_thumb(params)
+    .block
+
+mixin block_info_2x2_thumb(params)
+    .block
+
+    

@@ -1,4 +1,15 @@
 extends layouts/_index.jade
 
+
 block body
-    include helpers/_banner-home.jade
+    // ====== Home page ======
+    #page__home.page.page__home
+        include helpers/_banner-home.jade
+        
+        .page__home__cols.clearfix
+            .cols__4
+            .cols__4
+            .cols__4
+            .cols__4
+    
+    // ====== /Home page ======

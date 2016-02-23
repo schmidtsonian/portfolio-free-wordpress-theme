@@ -2,19 +2,24 @@
 
 
 .font-title,
+.font-title__page,
 .font-subtitle{
     font-weight: 600;
 }
 
+.font-title__page,
 .font-title{
     font-size: em(60);
     text-transform: uppercase;
     padding-bottom: 40px;
 }
+.font-title__page{
+    font-size: em(32);
+}
 .font-subtitle{
     font-size: em(28);
 }
-strong{
+b{
     font-weight: 700;
 }
 i{
@@ -24,4 +29,7 @@ a{
     text-decoration: none;
     text-transform: uppercase;
     color: $color-black;
+}
+p{
+    padding-bottom: 20px;
 }
