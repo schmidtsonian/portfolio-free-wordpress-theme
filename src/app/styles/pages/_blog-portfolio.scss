@@ -1,0 +1,32 @@
+@media screen and (max-width: 1024px){
+    .page__blog__portfolio{
+        .block__2x2--post-thumb{
+            height: 350px;
+        }
+        .block__1x1--post-thumb,
+        .block__2x1--post-thumb{
+            height: 170px;
+        }
+    }
+}
+@media screen and (max-width: 768px){
+    .page__blog__portfolio{
+        .block__1x1--post-thumb,
+        .block__2x1--post-thumb{
+            width: calc(50% - 10px);
+        }
+        .block__2x2--post-thumb{
+            width: calc(50% - 10px);
+        }
+    }
+}
+@media screen and (max-width: 768px){
+    .page__blog__portfolio{
+        .block__2x2--post-thumb,
+        .block__1x1--post-thumb,
+        .block__2x1--post-thumb{
+            width: calc(100% - 10px);
+            height: 195px;
+        }
+    }
+}

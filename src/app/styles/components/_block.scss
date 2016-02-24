@@ -1,12 +1,43 @@
-.block__1x1{
-    width: calc(50% - 10px);
-    height: 200px;
-    margin: 5px;
-    float: left;
-    color: white;
+.block{
     background-color: $color-brown-light;
     background-position: center center;
     background-size: cover;
+    margin: 5px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    &:hover .block__caption{
+        bottom: 0;
+        span{
+            @include transform(translateY(0px));
+            opacity: 1;
+        }
+    }
+}
+    .block__caption{
+        height: 60px;
+        line-height: 60px;
+        width: calc(100% - 40px);
+        padding: 0 20px;
+        color: white;
+        position: absolute;
+        bottom: -60px;
+        background: $color-brown;
+        opacity: 0.7;
+        @include transition(all .35s $ease-out-cubic);
+        span{
+            opacity: 0;
+            display: block;
+            @include transform(translateY(10px));
+            @include transition(all .15s $ease-out-cubic .2s);
+        }
+    }
+.block__1x1{
+    width: calc(50% - 10px);
+    height: 195px;
+    margin: 5px;
+    float: left;
+    color: white;
     h4{
         padding: 10px 30px;
         font-weight: 100;
@@ -25,4 +56,21 @@
 }
 .block__color--brown{
     background-color: $color-brown;
+}
+.block__color--white{
+    background-color: white;
+}
+
+.block__2x2--post-thumb{
+    width: calc(50% - 10px);
+    height: 400px;
+}
+.block__2x1--post-thumb{
+    width: calc(50% - 10px);
+    height: 195px;
+}
+
+.block__1x1--post-thumb{
+    width: calc(25% - 10px);
+    height: 195px;
 }
