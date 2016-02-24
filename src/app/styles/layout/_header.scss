@@ -43,7 +43,7 @@
     .main-header__nav{
         height: 90px;
         float: right;
-        @include transition(right .15s $ease-out-cubic);
+        @include transition(right .35s $ease-out-cubic);
         a{
             display: inline-block;
             text-align: center;
@@ -89,14 +89,46 @@
         a{
             display: block;
             line-height: em(40);
+            opacity: 0;
+            @include transform(translateX(-30px));
             @include padding(0);
             @include margin(0);
+            @include transition(all .1s $ease-out-cubic);
             &:hover:after{
                 display: none;
             }
+            
         }
         &.active{
             right: 0;
+            a{
+                @include transform(translateX(0));
+                opacity: 1;
+                &:nth-child(1){
+                    @include transition(all .25s $ease-out-cubic 0.1s);
+                }
+                &:nth-child(2){
+                    @include transition(all .25s $ease-out-cubic 0.18s);
+                }
+                &:nth-child(3){
+                    @include transition(all .25s $ease-out-cubic 0.23s);
+                }
+                &:nth-child(4){
+                    @include transition(all .25s $ease-out-cubic 0.28s);
+                }
+                &:nth-child(5){
+                    @include transition(all .25s $ease-out-cubic 0.33s);
+                }
+                &:nth-child(6){
+                    @include transition(all .25s $ease-out-cubic 0.38s);
+                }
+                &:nth-child(7){
+                    @include transition(all .25s $ease-out-cubic 0.43s);
+                }
+                &:nth-child(8){
+                    @include transition(all .25s $ease-out-cubic 0.48s);
+                }
+            }
         }
     }
     .main-header__button{
