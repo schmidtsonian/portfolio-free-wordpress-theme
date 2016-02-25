@@ -1,0 +1,10 @@
+.page__blog{
+    .page__blog__col{
+        &:first-child{
+            width: 75%;
+        }
+        &:last-child{
+            width: 25%;
+        }
+    }
+}

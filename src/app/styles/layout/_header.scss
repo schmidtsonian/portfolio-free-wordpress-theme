@@ -104,29 +104,10 @@
             a{
                 @include transform(translateX(0));
                 opacity: 1;
-                &:nth-child(1){
-                    @include transition(all .25s $ease-out-cubic 0.1s);
-                }
-                &:nth-child(2){
-                    @include transition(all .25s $ease-out-cubic 0.18s);
-                }
-                &:nth-child(3){
-                    @include transition(all .25s $ease-out-cubic 0.23s);
-                }
-                &:nth-child(4){
-                    @include transition(all .25s $ease-out-cubic 0.28s);
-                }
-                &:nth-child(5){
-                    @include transition(all .25s $ease-out-cubic 0.33s);
-                }
-                &:nth-child(6){
-                    @include transition(all .25s $ease-out-cubic 0.38s);
-                }
-                &:nth-child(7){
-                    @include transition(all .25s $ease-out-cubic 0.43s);
-                }
-                &:nth-child(8){
-                    @include transition(all .25s $ease-out-cubic 0.48s);
+                @for $i from 1 through 8 {
+                    &:nth-child(#{$i}){
+                        @include transition(all .25s $ease-out-cubic 0.08s * #{$i});
+                    }
                 }
             }
         }

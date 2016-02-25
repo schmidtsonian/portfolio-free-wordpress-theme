@@ -8,6 +8,13 @@
             height: 170px;
         }
     }
+    .block__caption{
+        bottom: 0;
+    }
+    .block__caption span{
+        opacity: 1;
+        @include transform(translateY(0));
+    }
 }
 @media screen and (max-width: 768px){
     .page__blog__portfolio{

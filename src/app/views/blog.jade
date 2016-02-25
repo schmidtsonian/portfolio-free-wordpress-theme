@@ -1,0 +1,12 @@
+extends layouts/_index.jade
+
+block body
+    // ====== Blog page ======
+    #page__about.page.page__blog
+        section.page__section.cols.clearfix
+            .cols__2.page__blog__col
+                +block_info_2_post({title:"Title post", desc:"Desc post", src:""})
+                +block_info_2_post({title:"Title post", desc:"Desc post", src:""})
+            .cols__2.page__blog__col
+                | dds
+    // ====== /Blog page ======

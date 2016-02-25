@@ -9,27 +9,26 @@
     &:hover .block__caption{
         bottom: 0;
         span{
+            @include transition(all .25s $ease-out-cubic .45s);
             @include transform(translateY(0px));
             opacity: 1;
         }
     }
 }
     .block__caption{
-        height: 60px;
-        line-height: 60px;
         width: calc(100% - 40px);
-        padding: 0 20px;
+        padding: 15px 20px;
         color: white;
         position: absolute;
-        bottom: -60px;
+        bottom: -100%;
         background: $color-brown;
         opacity: 0.7;
-        @include transition(all .35s $ease-out-cubic);
+        @include transition(all .55s $ease-out-cubic);
         span{
-            opacity: 0;
             display: block;
+            opacity: 0;
             @include transform(translateY(10px));
-            @include transition(all .15s $ease-out-cubic .2s);
+            @include transition(all .15s $ease-out-cubic);
         }
     }
 .block__1x1{
@@ -73,4 +72,23 @@
 .block__1x1--post-thumb{
     width: calc(25% - 10px);
     height: 195px;
+}
+
+.block__2--post{
+    width: calc(50% - 10px);
+    background-color: $color-blue;
+    img{
+        width: 100%;
+    }
+    .font-title__thumb,
+    .font-description__thumb{
+        padding: 10px 20px;
+    }
+    .font-title__thumb{
+        padding-bottom: 0px;
+        color: white;
+    }
+    .font-description__thumb{
+        color: $color-brown;
+    }
 }

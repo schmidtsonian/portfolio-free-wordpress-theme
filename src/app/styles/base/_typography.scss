@@ -3,6 +3,7 @@
 
 .font-title,
 .font-title__page,
+.font-title__thumb,
 .font-subtitle{
     font-weight: 600;
 }
@@ -18,6 +19,9 @@
 }
 .font-subtitle{
     font-size: em(28);
+}
+.font-description__thumb{
+    font-size: em(12);
 }
 b{
     font-weight: 700;
