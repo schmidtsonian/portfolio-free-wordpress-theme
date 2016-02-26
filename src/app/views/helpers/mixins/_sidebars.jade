@@ -1,0 +1,10 @@
+mixin sidebar_list(title, array)
+    // ====== Sidebar footer contact ======
+    .sidebar.sidebar__post-search
+        h3.font-title__sidebar=title
+        ul
+            each val in array
+                li
+                    a(href=val.href, title=val.title).page-load=val.title
+                
+    // ====== /Sidebar footer contact ======

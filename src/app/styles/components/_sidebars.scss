@@ -1,0 +1,43 @@
+.sidebar__footer-contact{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: em(12);
+    strong{
+        color: white;
+    }
+    a{
+        color: $color-brown-light;
+    }
+}
+
+.sidebar__footer-copyright{
+    font-size: em(10);
+    color: $color-grey;
+    text-align: center;
+}
+
+.sidebar__post-search{
+    width: calc(100% - 40px);
+    padding: 20px 20px;
+    margin: 5px 5px 10px 5px;
+    background-color: $color-brown-light;
+    &, a{
+        color: white;
+    }
+    a{
+        font-size: em(10);
+        line-height: 1em;
+        text-transform: inherit;
+    }
+    li{
+        
+        line-height: 1.2em;
+        padding: 0 0 5px 5px;
+        list-style: disc;
+        margin: 0 0 12px 20px;
+        border-bottom: 1px dashed $color-brown;
+    }
+    .font-title__sidebar{
+        padding-bottom: 10px;
+    }
+}

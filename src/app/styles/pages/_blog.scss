@@ -1,7 +1,11 @@
 .page__blog{
     .page__blog__col{
         &:first-child{
+            display: inline-block;
             width: 75%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
         }
         &:last-child{
             width: 25%;

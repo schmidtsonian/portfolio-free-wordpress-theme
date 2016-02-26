@@ -5,8 +5,33 @@ block body
     #page__about.page.page__blog
         section.page__section.cols.clearfix
             .cols__2.page__blog__col
-                +block_info_2_post({title:"Title post", desc:"Desc post", src:""})
-                +block_info_2_post({title:"Title post", desc:"Desc post", src:""})
+                +block_info_2_post({title:"Title post", src:"http://placehold.it/450x250", desc:"1 Laboris non cillum officia tempor eu do sint."})
+                +block_info_2_post({title:"Title post", src:"http://placehold.it/450x250", desc:"2 Tempor ea do qui ad Lorem officia commodo est ex ex id. Excepteur mollit tempor cupidatat occaecat incididunt magna. Voluptate dolor dolore elit culpa nisi amet incididunt ut irure ullamco non culpa. Culpa cupidatat ea sunt minim nulla laborum aliqua mollit. Nisi exercitation excepteur ad enim."})
+                
+                +block_info_2_post({title:"Title post", src:"http://placehold.it/450x250", desc:"3 Desc post"})
+                +block_info_2_post({title:"Title post", src:"http://placehold.it/450x250", desc:"4 Sunt quis velit enim laborum nulla mollit esse tempor Lorem in voluptate esse ex."})
+                
+                +block_info_2_post({title:"Title post", src:"http://placehold.it/450x450", desc:"5 Tempor ea do qui ad Lorem officia commodo est ex ex id. Excepteur mollit tempor cupidatat occaecat incididunt magna. Voluptate dolor dolore elit culpa nisi amet incididunt ut irure ullamco non culpa. Culpa cupidatat ea sunt minim nulla laborum aliqua mollit."})
+                +block_info_2_post({title:"Title post", src:"http://placehold.it/450x450", desc:"6 Laboris non cillum officia tempor eu do sint. Laboris non cillum officia tempor eu do sint. Laboris non cillum officia tempor eu do sint. Laboris non cillum officia tempor eu do sint. Laboris non cillum officia tempor eu do sint. Laboris non cillum officia tempor eu do sint. Laboris non cillum officia tempor eu do sint. Laboris non cillum officia tempor eu do sint."})
             .cols__2.page__blog__col
-                | dds
+                +sidebar_list("Recent Post", [
+                    {title:"Title post 1", href:"#"},
+                    {title:"Nostrud magna esse qui dolore incididunt commodo aute eu dolor enim culpa occaecat laborum adipisicing.", href:"#"},
+                    {title:"Title post 3", href:"#"},
+                    {title:"Title post 4", href:"#"}
+                ])
+                
+                +sidebar_list("Categories", [
+                    {title:"Title post 1", href:"#"},
+                    {title:"Nostrud magna esse qui dolore incididunt commodo aute eu dolor enim culpa occaecat laborum adipisicing.", href:"#"},
+                    {title:"Title post 3", href:"#"},
+                    {title:"Title post 4", href:"#"}
+                ])
+                
+                +sidebar_list("Archives", [
+                    {title:"Title post 1", href:"#"},
+                    {title:"Nostrud magna esse qui dolore incididunt commodo aute eu dolor enim culpa occaecat laborum adipisicing.", href:"#"},
+                    {title:"Title post 3", href:"#"},
+                    {title:"Title post 4", href:"#"}
+                ])
     // ====== /Blog page ======

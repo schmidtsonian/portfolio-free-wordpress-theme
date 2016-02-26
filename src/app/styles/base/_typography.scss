@@ -4,7 +4,8 @@
 .font-title,
 .font-title__page,
 .font-title__thumb,
-.font-subtitle{
+.font-subtitle,
+.font-title__sidebar{
     font-weight: 600;
 }
 
@@ -22,6 +23,9 @@
 }
 .font-description__thumb{
     font-size: em(12);
+}
+.font-title__sidebar{
+    text-transform: uppercase;
 }
 b{
     font-weight: 700;
