@@ -1,0 +1,62 @@
+extends layouts/_index.jade
+
+block body
+    // ====== Page single ======
+    #page__about.page.page__single
+        article.page__section.cols.clearfix
+            .cols__2.page__single__col
+                header
+                    img(src="https://placeholdit.imgix.net/~text?txtsize=23&txt=900%C3%97400&w=900&h=400").page__single__image
+                    h1.font-title__page header title
+                
+                p <strong>Strong</strong> text 
+                p <i>italic</i>  text 
+                p <small>Small</small> text 
+                p <mark>Marked</mark> text
+                p <del>Deleted</del> text
+                p Simple <a href="#">link</a>
+                
+                h1 h1 tag
+                h2 h2 tag
+                h3 h3 tag
+                
+                ul
+                    li bullet
+                    li simple
+                ol
+                    li numeric
+                    li list
+                pre
+                    | Text in a pre element
+                    | is displayed in a fixed-width
+                    | font, and it preserves
+                    | both      spaces and
+                    | line breaks
+                pre
+                    code
+                        | var config = {"theme":"dark",api-key:"fjhb3u2h4busifhu13u232iuiwrew"}
+                        | function () { }
+                p Reprehenderit amet duis minim sint tempor est nulla aliquip proident id qui nulla elit enim. Sint laboris labore irure excepteur commodo in irure commodo amet ad anim laboris non. Cupidatat nulla est culpa dolore ullamco elit ut occaecat magna eu laboris. Labore consectetur quis aliqua velit eu ea incididunt nisi laborum ipsum dolore nulla.
+                p Officia commodo cillum nulla et tempor velit et reprehenderit deserunt amet enim.
+            .cols__2.page__single__col
+                +sidebar_list("Recent Post", [
+                    {title:"Title post 1", href:"#"},
+                    {title:"Nostrud magna esse qui dolore incididunt commodo aute eu dolor enim culpa occaecat laborum adipisicing.", href:"#"},
+                    {title:"Title post 3", href:"#"},
+                    {title:"Title post 4", href:"#"}
+                ])
+                
+                +sidebar_list("Categories", [
+                    {title:"Title post 1", href:"#"},
+                    {title:"Nostrud magna esse qui dolore incididunt commodo aute eu dolor enim culpa occaecat laborum adipisicing.", href:"#"},
+                    {title:"Title post 3", href:"#"},
+                    {title:"Title post 4", href:"#"}
+                ])
+                
+                +sidebar_list("Archives", [
+                    {title:"Title post 1", href:"#"},
+                    {title:"Nostrud magna esse qui dolore incididunt commodo aute eu dolor enim culpa occaecat laborum adipisicing.", href:"#"},
+                    {title:"Title post 3", href:"#"},
+                    {title:"Title post 4", href:"#"}
+                ])
+    // ====== /Page single ======

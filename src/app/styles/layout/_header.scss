@@ -5,6 +5,9 @@
     @include size(auto 90px);
     max-width: 1280px;
     position: relative;
+    .page-load{
+        color: $color-black;
+    }
 }
     .main-header__button{
         @include size(60px 90px);

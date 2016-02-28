@@ -9,7 +9,7 @@ mixin block_info_1x1_thumb(params)
     .block.block__1x1(style="background-image:url(#{params.src});")
 
 mixin block_info_2_post(params)
-    .block.block__2--post
+    a.block.block__2--post(href=params.href, title=params.title)
         img(src=params.src, width="", height="", alt=params.title)
         h2.font-title__thumb=params.title
         p.font-description__thumb=params.desc

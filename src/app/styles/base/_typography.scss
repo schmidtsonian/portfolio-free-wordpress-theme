@@ -1,6 +1,44 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:100,400,700,700italic,400italic,100italic);
 
 
+b,strong{
+    font-weight: 700;
+}
+i{
+    font-style: italic;
+}
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-red;
+}
+
+ul,ol,
+pre, p, h2, h3, h4, h5{
+    padding-bottom: em(20);
+}
+pre {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+code{
+    font-family: monospace;
+    color: $color-brown;
+    padding: em(20);
+    background-color: #fff;
+    display: block;
+}
+small{
+    font-size: .7em;
+}
+
+ul {list-style: disc inside; }
+ol {list-style: decimal inside; }
+
+h1, h2, h3,
 .font-title,
 .font-title__page,
 .font-title__thumb,
@@ -13,31 +51,21 @@
 .font-title{
     font-size: em(60);
     text-transform: uppercase;
-    padding-bottom: 40px;
 }
+h1,
 .font-title__page{
+    text-transform: uppercase;
     font-size: em(32);
+    padding-bottom: em(40);
 }
+h2,
 .font-subtitle{
     font-size: em(28);
 }
+h3,
 .font-description__thumb{
     font-size: em(12);
 }
 .font-title__sidebar{
     text-transform: uppercase;
-}
-b{
-    font-weight: 700;
-}
-i{
-    font-style: italic;
-}
-a{
-    text-decoration: none;
-    text-transform: uppercase;
-    color: $color-black;
-}
-p{
-    padding-bottom: 20px;
 }
