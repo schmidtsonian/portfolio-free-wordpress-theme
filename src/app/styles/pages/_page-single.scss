@@ -14,18 +14,17 @@
     }
 }
 @media screen and (max-width: 960px){
-    // .page__blog{
-        
-    //     .page__blog__col{
-    //         width: 100% !important;
-    //         &:first-child{
-    //             display: block;
-    //         }
-    //     }
-    //     .block__2--post{
-    //         width: calc(100% - 10px);
-    //     }
-    // }
+    .page__single{
+        .page__single__col{
+            width: 100% !important;
+            &:first-child{
+                display: block;
+            }
+        }
+        .block__2--post{
+            width: calc(100% - 10px);
+        }
+    }
 }
 @media screen and (max-width: 650px){
     .page__blog{

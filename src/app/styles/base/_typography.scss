@@ -17,6 +17,9 @@ ul,ol,
 pre, p, h2, h3, h4, h5{
     padding-bottom: em(20);
 }
+mark{
+    background-color: $color-red;
+}
 pre {
     white-space: pre-wrap;       /* css-3 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
