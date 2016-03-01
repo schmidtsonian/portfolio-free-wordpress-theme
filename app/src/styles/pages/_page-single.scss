@@ -1,0 +1,33 @@
+.page__single{
+    .page__single__col{
+        &:first-child{
+            width: calc(75% - 5px);
+            margin-right: 5px;
+        }
+        &:last-child{
+            width: 25%;
+        }
+    }
+    .page__single__image{
+        width: 100%;
+        padding: 5px 0 20px 0;
+    }
+}
+@media screen and (max-width: 960px){
+    .page__single{
+        .page__single__col{
+            width: 100% !important;
+            &:first-child{
+                display: block;
+            }
+        }
+        .block__2--post{
+            width: calc(100% - 10px);
+        }
+    }
+}
+@media screen and (max-width: 650px){
+    .page__blog{
+        
+    }
+}

@@ -1,0 +1,32 @@
+mixin block_info_1x1(params)
+    .block.block__1x1(class="block__color--#{params.color}")
+        h4
+            i=params.name
+        h2=params.title
+        p=params.description
+
+mixin block_info_1x1_thumb(params)
+    .block.block__1x1(style="background-image:url(#{params.src});")
+
+mixin block_info_2_post(params)
+    a.block.block__2--post(href=params.href, title=params.title)
+        img(src=params.src, width="", height="", alt=params.title)
+        h2.font-title__thumb=params.title
+        p.font-description__thumb=params.desc
+
+mixin block_info_1x1_post-thumb(params)
+    a.block.block__1x1--post-thumb(href=params.href, class="block__color--#{params.color}", style="background-image:url(#{params.src});", title=params.title)
+        strong.block__caption
+            span=params.title
+    
+mixin block_info_2x1_post-thumb(params)
+    a.block.block__2x1--post-thumb(href=params.href, class="block__color--#{params.color}", style="background-image:url(#{params.src});", title=params.title)
+        strong.block__caption
+            span=params.title
+
+mixin block_info_2x2_post-thumb(params)
+    a.block.block__2x2--post-thumb(href=params.href, class="block__color--#{params.color}", style="background-image:url(#{params.src});", title=params.title)
+        strong.block__caption
+            span=params.title
+
+    

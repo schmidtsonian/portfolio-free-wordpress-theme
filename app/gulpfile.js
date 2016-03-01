@@ -21,13 +21,17 @@ var TEMPLATE_PATH = "portfolio-free-wordpress-theme/"
 
 var path = {
     styles  : {
-        src  : 'app/styles/**/*.scss',
+        src  : 'src/styles/**/*.scss',
         dest : '../' + TEMPLATE_PATH
     },
     views   : {
-        src  : 'app/views/**/*.jade',
+        src  : 'src/views/**/*.jade',
         dest : '../' + TEMPLATE_PATH
     },
+    assets :{
+        src: 'src/assets/**/*',
+        dest : '../' + TEMPLATE_PATH
+    }
 };
 
 gulp.task('webserver', function() {
@@ -72,12 +76,18 @@ gulp.task('views', function() {
         .pipe(connect.reload());
 });
 
+gulp.task('copy', function(){
+    return gulp.src(path.assets.src)
+        .pipe(gulp.dest(path.assets.dest));
+});
+
 gulp.task('watch', function () {
 
-    gulp.watch(path.views.src, ['views']);
+    gulp.watch(path.styles.src, ['copy']);
     gulp.watch(path.styles.src, ['styles']);
+    gulp.watch(path.views.src, ['views']);
     // gulp.watch(path.scripts.src, ['scripts']);
 });
 
-gulp.task('default', ['styles', 'views', 'webserver', 'watch']);
+gulp.task('default', ['copy','styles', 'views', 'webserver', 'watch']);
 // gulp.task('default', ['main-bower-files', 'scripts', 'styles', 'views', 'webserver', 'watch']);

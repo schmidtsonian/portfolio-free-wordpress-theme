@@ -1,0 +1,28 @@
+.page__blog{
+    .page__blog__col{
+        &:first-child{
+            display: inline-block;
+            width: 75%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        &:last-child{
+            width: 25%;
+        }
+    }
+}
+@media screen and (max-width: 960px){
+    .page__blog{
+        
+        .page__blog__col{
+            width: 100% !important;
+            &:first-child{
+                display: block;
+            }
+        }
+        .block__2--post{
+            width: calc(100% - 10px);
+        }
+    }
+}

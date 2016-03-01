@@ -1,0 +1,121 @@
+.main-header{
+    line-height: 90px;
+    @include padding(25px 50px);
+    @include margin(0 auto);
+    @include size(auto 90px);
+    max-width: 1280px;
+    position: relative;
+    .page-load{
+        color: $color-black;
+    }
+}
+    .main-header__button{
+        @include size(60px 90px);
+        @include position(absolute, -220px 10px null null);
+        cursor: pointer;
+        z-index: 101;
+        span{
+            display: block;
+            background: black;
+            @include size(40px 5px);
+            @include transition(all .35s $ease-out-cubic);
+            &:nth-child(1){
+                top: -30px;
+            }
+            &:nth-child(3){
+                bottom: -30px;
+            }
+        }
+        &.active span{
+            &:nth-child(2){
+                width: 0;
+            }
+            &:nth-child(1){
+                top: 0;
+                @include transform(rotate(405deg))
+            }
+            &:nth-child(3){
+                bottom: 0;
+                @include transform(rotate(-405deg))
+            }
+        }
+    }
+    .main-header__logo{
+        float: left;
+    }
+    .main-header__nav{
+        height: 90px;
+        float: right;
+        @include transition(right .35s $ease-out-cubic);
+        a{
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            @include padding(0 10px);
+            @include margin(0 10px);
+            @include transition(all .35s $ease-out-cubic);
+            &:after{
+                content: "";
+                display: block;
+                opacity: 0;
+                background-color: $color-brown-light;
+                @include size(100% 2px);
+                @include position(absolute, null null 0 0  );
+                @include transition(all .35s $ease-out-cubic);
+            }
+            &:hover:after{
+                bottom: 25px;
+                opacity: 1;
+            }
+        }
+    }
+@media screen and (max-width: 1024px){
+    .main-header{
+        @include padding(20px);
+    }
+    .main-header__nav a{
+        @include padding(0 5px);
+        @include margin(0 5px);
+        font-size: em(12);
+    }
+}
+@media screen and (max-width: 768px){
+    .main-header__nav{
+        @include position(fixed, 0 100% null null);
+        @include size(100% 100%);
+        z-index: 100;
+        @include display(flex);
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex-direction(column);
+        background-color: $color-cream;
+        a{
+            display: block;
+            line-height: em(40);
+            opacity: 0;
+            @include transform(translateX(-30px));
+            @include padding(0);
+            @include margin(0);
+            @include transition(all .1s $ease-out-cubic);
+            &:hover:after{
+                display: none;
+            }
+            
+        }
+        &.active{
+            right: 0;
+            a{
+                @include transform(translateX(0));
+                opacity: 1;
+                @for $i from 1 through 8 {
+                    &:nth-child(#{$i}){
+                        @include transition(all .25s $ease-out-cubic 0.08s * #{$i});
+                    }
+                }
+            }
+        }
+    }
+    .main-header__button{
+        top: 20px;
+    }
+}

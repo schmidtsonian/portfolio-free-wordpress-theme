@@ -1,0 +1,46 @@
+
+$em-base: 14px;
+
+body, html {
+  min-height: 600px;
+}
+
+body {
+  font-family: $font;
+  font-weight: 400;
+  font-size: em(16);
+  line-height: 1.6em;
+  letter-spacing: 0.05em;
+  color: $color-black;
+  border: 20px solid $color-cream;
+  position: relative;
+}
+
+img{
+    background-color: $color-cream;
+}
+.main-container{
+    max-width: 1280px;
+    padding: 25px 50px;
+    margin: 0 auto;
+    position: relative;
+}
+.page{
+    background-color: $color-cream; 
+}
+    .page__header,
+    .page__section{
+        padding: 40px;
+    }
+    .page__header{
+        padding-bottom: 0
+    }
+
+@media screen and (max-width: 1024px){
+    body{
+          border-width: 0;
+    }
+    .main-container{
+        @include padding(20px);
+    }
+}

@@ -1,0 +1,111 @@
+.banner__page-home{
+    width: 100%;
+    height: 320px;
+    background: no-repeat scroll #333;
+    background-position: 50% 50%;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    @include transition(all .65s $ease-out-cubic);
+    .font-title,
+    .font-subtitle{
+        color: white;
+        display: block;
+        padding-left: 5%;
+        opacity: 1;
+        @include transition(all .7s $ease-out-cubic);
+    }
+    .font-title{
+        padding-top: 15%;
+    }
+    .font-subtitle{
+        text-transform: uppercase
+    }
+    &:hover{
+        background-position: 220px 50%;
+        .banner__page-home__bio{
+            left: 0;
+        }
+        .font-title,
+        .font-subtitle{
+            @include transform(translateX(225px));
+        }
+        .b{
+            opacity: 1;
+            @include transform(translatey(0) translateX(0));
+        }
+        .b1{
+            @include transition-delay(0.15s);
+        }
+        .b2{
+            @include transition-delay(0.2s);
+        }
+        .b3{
+            @include transition-delay(0.25s);
+        }
+        .b4{
+            @include transition-delay(0.3s);
+        }
+        .b5{
+            @include transition-delay(0.35s);
+        }
+    }
+}
+    .banner__page-home__bio{
+        background-color: $color-black;
+        width: 170px;
+        left: -260px;
+        @include padding(25px 25px);
+        box-shadow: 5px 0px 8px $color-black;
+        @include transition(all .55s $ease-out-cubic);
+        p,a{
+            
+            color: white;
+        }
+        p, li, a{
+            font-size: em(11);
+            line-height: 1.4em;
+            padding-bottom: 10px;
+            font-weight: 100;
+        }
+        strong{
+            font-size: em(18);
+        }
+        .b{
+            opacity: 0;
+            @include transform(translatey(20px) translateX(-20px));
+            @include transition(all .55s $ease-out-cubic);
+        }
+    }
+@media screen and (max-width: 768px){
+    .banner__page-home{
+        .font-title{
+            font-size: em(18);
+            padding-bottom: 10px;
+        }
+        .font-subtitle{
+            font-size: em(14)
+        }
+    }
+}
+@media screen and (max-width: 480px){
+    .banner__page-home{
+        height: 180px;
+        background-position: 50% 50% !important;
+        &:hover{
+            background-position: 220px 50%;
+            .banner__page-home__bio{
+                left: -260px !important;
+            }
+            .font-title,
+            .font-subtitle{
+                @include transform(translateX(0px));
+            }
+        }
+    }
+    .font-title,
+    .font-subtitle{
+        padding-left: 0;
+        text-align: center;
+    }
+} 

@@ -1,0 +1,95 @@
+.block{
+    background-color: $color-brown-light;
+    background-position: center center;
+    background-size: cover;
+    margin: 5px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    &:hover .block__caption{
+        bottom: 0;
+        span{
+            @include transition(all .25s $ease-out-cubic .45s);
+            @include transform(translateY(0px));
+            opacity: 1;
+        }
+    }
+}
+    .block__caption{
+        width: calc(100% - 40px);
+        padding: 15px 20px;
+        color: white;
+        position: absolute;
+        bottom: -100%;
+        background: $color-brown;
+        opacity: 0.7;
+        @include transition(all .55s $ease-out-cubic);
+        span{
+            display: block;
+            opacity: 0;
+            @include transform(translateY(10px));
+            @include transition(all .15s $ease-out-cubic);
+        }
+    }
+.block__1x1{
+    width: calc(50% - 10px);
+    height: 195px;
+    margin: 5px;
+    float: left;
+    color: white;
+    h4{
+        padding: 10px 30px;
+        font-weight: 100;
+        font-size: em(12);
+        text-transform: uppercase;
+        opacity: .8;
+    }
+    h2,p{
+        padding: 0 30px 10px 30px;
+    }
+    p{
+        font-size: em(10);
+        line-height: 1.5em;
+        font-weight: 100;
+    }
+}
+.block__color--brown{
+    background-color: $color-brown;
+}
+.block__color--white{
+    background-color: white;
+}
+
+.block__2x2--post-thumb{
+    width: calc(50% - 10px);
+    height: 400px;
+}
+.block__2x1--post-thumb{
+    width: calc(50% - 10px);
+    height: 195px;
+}
+
+.block__1x1--post-thumb{
+    width: calc(25% - 10px);
+    height: 195px;
+}
+
+.block__2--post{
+    width: calc(50% - 10px);
+    background-color: $color-blue;
+    img{
+        width: 100%;
+    }
+    .font-title__thumb,
+    .font-description__thumb{
+        padding: 10px 20px;
+    }
+    .font-title__thumb{
+        padding-bottom: 0px;
+        color: white;
+    }
+    .font-description__thumb{
+        color: $color-brown;
+        text-transform: initial;
+    }
+}

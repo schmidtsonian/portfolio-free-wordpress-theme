@@ -1,0 +1,29 @@
+.page__about{
+    .cols__2:last-child{
+        background-color: white;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .page__about{
+        .cols__2{
+            width: 100%;
+        }
+    }
+}
+@media screen and (max-width: 480px){
+    .page__about{
+        .block{
+            height: 300px;
+        }
+    }
+}
+@media screen and (max-width: 455px){
+    .page__about{
+        .block{
+            height: 200px;
+            margin: 5px 0;
+            width: 100%;
+        }
+    }
+}

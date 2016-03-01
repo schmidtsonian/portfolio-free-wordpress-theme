@@ -1,0 +1,22 @@
+.page__nav-filters{
+    ul{
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    li{
+        display: inline-block;  
+    }
+    a{
+        display: block;
+        @include padding(5px 15px);
+        @include margin(5px 2px);
+        font-weight: 100;
+        border: 1px solid $color-black;
+        font-size: em(12);
+        @include transition(all .65s $ease-out-cubic);
+        &:hover, &.active{
+            background-color: $color-black;
+            color: white;
+        }
+    }
+}

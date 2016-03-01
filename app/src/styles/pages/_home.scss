@@ -1,0 +1,32 @@
+.page__home{
+    background-color: white;
+    .page__home__cols{
+        @include margin(20px -5px 0 -5px);
+    }
+    .cols__4{
+        background-color: $color-cream;
+        width: calc(25% - 10px);
+        height: 200px;
+        margin: 0 5px;
+        float:left;
+    }
+}
+@media screen and (max-width: 767px){
+    .page__home{
+        .cols__4{
+            margin: 5px;
+            width: calc(50% - 10px);
+        }
+    }
+}
+@media screen and (max-width: 479px){
+    .page__home{
+        .page__home__cols{
+            @include margin(20px 0 0 0);
+        }
+            .cols__4{
+                width: 100%;
+                margin: 5px 0;
+            }
+    }
+}
