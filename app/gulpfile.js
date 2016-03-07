@@ -80,9 +80,10 @@ gulp.task('clean', function () {
 
 gulp.task('watch', function () {
 
-    gulp.watch(path.styles.src, ['copy']);
+    // gulp.watch(path.styles.src, ['copy']);
     gulp.watch(path.styles.src, ['styles']);
-    gulp.watch(path.views.src, ['views']);
+    // gulp.watch(path.views.src, ['views']);
 });
 
-gulp.task('default', ['clean', 'copy','styles', 'views', 'webserver', 'watch']);
+// gulp.task('default', ['clean', 'copy','styles', 'views', 'webserver', 'watch']);
+gulp.task('default', ['styles', 'watch']);
