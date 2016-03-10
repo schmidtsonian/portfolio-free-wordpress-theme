@@ -13,7 +13,7 @@
 
 get_header(); ?>
     <!-- About page -->
-    <div id="page__about" class="page page__about cols clearfix">
+    <article id="page__about" class="page page__about cols clearfix">
         
         <div class="cols__2">
             <header class="page__header">
@@ -42,7 +42,7 @@ get_header(); ?>
                 <p>Id pariatur magna eu culpa consequat sint incididunt</p>
             </div>
         </div>
-    </div>
+    </article>
     <!-- /About page -->
 <?php 
 // get_sidebar();
