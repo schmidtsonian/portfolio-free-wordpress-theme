@@ -13,9 +13,20 @@
 
 get_header(); ?>
     <!-- Portfolio archive page -->
-    <div id="page__about" class="page page__blog__portfolio">
+    <div id="page__blog-portfolio" class="page page__blog__portfolio">
         
         <section class="page__section">
+            
+            <!-- Nav filters -->
+            <nav class="page__nav-filters">
+                <ul>
+                    <li><a href="#" title="all" class="page-load active">all</a></li>
+                    <li><a href="#" title="all" class="page-load">html</a></li>
+                    <li><a href="#" title="all" class="page-load">css</a></li>
+                    <li><a href="#" title="all" class="page-load">javascript</a></li>
+                </ul>
+            </nav>
+            <!-- /Nav filters -->
             
             <div class="row clearfix">
                 <a title="" href="#" class="block block__2x2--post-thumb block__color--withe" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400);">
