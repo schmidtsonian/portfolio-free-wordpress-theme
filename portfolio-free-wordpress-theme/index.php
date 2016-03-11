@@ -12,28 +12,39 @@
 */
 
 get_header(); ?>
-    <!-- Blog page -->
-    <div id="page__about" class="page page__blog">
+    <!-- Home page -->
+    <article id="page__home" class="page page__home">
+        <!-- Banner page Home -->
+        <div class="banner banner__page-home" style="background-image:url(/images/bg-banner-home.png)">
+            <div class="banner__page-home__bio center-left" style="background-image:url(/images/bg-bio-banner-home.jpg);">
+                <p class="b b1">
+                    <b>Hellow!</b> 
+                </p>
+                <p class="b b2">
+                    <i>Who am I</i>
+                </p>
+                <span class="hr-dotted b b3"></span>
+                <p class="b b4">
+                    Duis ea proident fugiat ad irure labore pariatur ut eiusmod Lorem cupidatat sit amet.
+                </p>
+                <ul class="b b5">
+                    <li><a href="#", target="_blank">email@domain.com</a></li>
+                    <li><a href="#", target="_blank">@twitter</a></li>
+                </ul>
+            </div>
+            <h1 class="font-title">Title page</h1>
+            <h2 class="font-subtitle">Subtitle page</h2>
+        </div>
+        <!-- /Banner page Home -->
         
-        <section class="page__section cols clearfix">
-            <div class="cols__2 page__blog__col">
-                
-                <a href="#" class="block block__2--post", title="Title post">
-                    <img src="http://placehold.it/450x250", width="", height="", alt="Title post">
-                    <h2 class="font-title__thumb">
-                        Title post
-                    </h2>
-                    <p class="font-description__thumb">
-                        1 Laboris non cillum officia tempor eu do sint.
-                    </p>
-                </a>
-            </div>
-            <div class="cols__2 page__blog__col">
-                <?php get_sidebar("standar"); ?>
-            </div>
-        </section>
-    </div>
-    <!-- /Blog page -->
+        <main role="main" class="page__home__cols clearfix">
+            <div class="cols__4"></div>
+            <div class="cols__4"></div>
+            <div class="cols__4"></div>
+            <div class="cols__4"></div>
+        </main>
+    </article>
+    <!-- /Home page -->
 <?php 
 // get_sidebar();
 get_footer();?>

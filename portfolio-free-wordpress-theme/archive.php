@@ -14,16 +14,54 @@
 get_header(); ?>
     <!-- Blog page -->
     <div id="page__about" class="page page__blog">
-        
         <section class="page__section cols clearfix">
             <div class="cols__2 page__blog__col">
+                <!--<h1 class="clearfix">title</h1>-->
                 
+                <a href="#" class="block block__2--post", title="Title post">
+                    <img src="http://placehold.it/450x250", width="", height="", alt="Title post">
+                    <h2 class="font-title__thumb">
+                        archive
+                    </h2>
+                    <p class="font-description__thumb">
+                        1 Laboris non cillum officia tempor eu do sint.
+                    </p>
+                </a>
+                <a href="#" class="block block__2--post", title="Title post">
+                    <img src="http://placehold.it/450x250", width="", height="", alt="Title post">
+                    <h2 class="font-title__thumb">
+                        archive
+                    </h2>
+                    <p class="font-description__thumb">
+                        1 Laboris non cillum officia tempor eu do sint.
+                    </p>
+                </a>
+                <a href="#" class="block block__2--post", title="Title post">
+                    <img src="http://placehold.it/450x250", width="", height="", alt="Title post">
+                    <h2 class="font-title__thumb">
+                        archive
+                    </h2>
+                    <p class="font-description__thumb">
+                        1 Laboris non cillum officia tempor eu do sint.
+                    </p>
+                </a>
+                <a href="#" class="block block__2--post", title="Title post">
+                    <img src="http://placehold.it/450x250", width="", height="", alt="Title post">
+                    <h2 class="font-title__thumb">
+                        archive
+                    </h2>
+                    <p class="font-description__thumb">
+                        1 Laboris non cillum officia tempor eu do sint.
+                    </p>
+                </a>
             </div>
             <div class="cols__2 page__blog__col">
                 <?php get_sidebar("standar"); ?>
             </div>
         </section>
+        </section>
     </div>
     <!-- /Blog page -->
 <?php 
+// get_sidebar();
 get_footer();?>
