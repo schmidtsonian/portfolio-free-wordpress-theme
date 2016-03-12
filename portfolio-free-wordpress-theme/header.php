@@ -9,8 +9,15 @@
     </head>
     <body>
         <header class="main-header">
-            <a href="/" title="Home" class="page-load">
-                <img src="https://placeholdit.imgix.net/~text?txtsize=23&txt=260%C3%9790&w=260&h=90" alt="" width="260" height="90" class="main-header__logo">
+            <a href="/" title="<?php echo get_bloginfo( 'name' ); ?>" class="page-load">
+            
+                <img src="<?php 
+                    if (get_theme_mod( 'logo_settings' )) : 
+                        echo get_theme_mod( 'logo_settings'); 
+                    else: 
+                        echo 'https://placeholdit.imgix.net/~text?txtsize=23&txt=260%C3%9790&w=260&h=90'; 
+                    endif; ?>" 
+                    alt="<?php echo get_bloginfo( 'name' ); ?>" />
             </a>
             <nav id="main-header__nav" class="main-header__nav">
                 <a href="#" class="page-load">Home</a>
@@ -27,4 +34,3 @@
         
         <!-- Main Container -->
         <div id="main-container" class="main-container">
-        
