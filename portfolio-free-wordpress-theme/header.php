@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>">
     </head>
     <body>
+        <!-- Main Header -->
         <header class="main-header">
             <a href="/" title="<?php echo get_bloginfo( 'name' ); ?>" class="page-load">
             
@@ -20,10 +21,17 @@
                     alt="<?php echo get_bloginfo( 'name' ); ?>" />
             </a>
             <nav id="main-header__nav" class="main-header__nav">
-                <a href="#" class="page-load">Home</a>
-                <a href="#" class="page-load">About</a>
-                <a href="#" class="page-load">Portfolio</a>
-                <a href="#" class="page-load">Blog</a>
+            <?php echo strip_tags(wp_nav_menu( 
+                array( 
+                     'theme_location' => 'header-menu',
+                        'items_wrap'  => '%3$s',
+                        'fallback_cb' => true,
+                          'container' => '',
+                              'depth' => 0,
+                               'echo' => false,
+ 
+                ) 
+            ), '<a>'); ?>
             </nav>
             <div id="main-header__button" class="main-header__button">
                 <span class="center"></span>
@@ -31,6 +39,7 @@
                 <span class="center"></span>
             </div>
         </header>
+        <!-- /Main Header -->
         
         <!-- Main Container -->
         <div id="main-container" class="main-container">

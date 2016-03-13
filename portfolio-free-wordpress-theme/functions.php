@@ -16,7 +16,7 @@ function add_custom_page($pageName, $pageTitle) {
     }
 }
 
-add_custom_page('about', 'About');
+
 
 function add_custom_menu_page() {
     $page = get_page_by_path('about');
@@ -24,7 +24,7 @@ function add_custom_menu_page() {
     __('About'),
     __('About'), 'manage_options', 'post.php?post='.$page->ID.'&action=edit');
 }
-add_action('admin_menu', 'add_custom_menu_page');
+
 
 function create_posttype() {
     register_post_type('portfolio',
@@ -44,7 +44,7 @@ function create_posttype() {
     //   'rewrite' => array('slug' => 'products'),
     ));
 }
-add_action('init', 'create_posttype');
+
 
 
 
@@ -137,4 +137,23 @@ function theme_customizer( $wp_customize ) {
         ) 
     );
 }
+
+function register_menus() {
+    
+  register_nav_menu('header-menu',__( 'Header Menu' ));
+}
+
+function add_nav_class($output) {
+    $output= preg_replace('/<a/', '<a class="page-load"', $output, -1);
+    return $output;
+}
+
+
+add_custom_page('about', 'About');
+add_action('admin_menu', 'add_custom_menu_page');
+add_action('init', 'create_posttype');
+add_action( 'init', 'register_menus' );
+add_filter('wp_nav_menu', 'add_nav_class');
 add_action('customize_register', 'theme_customizer');
+
+
