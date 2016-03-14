@@ -9,7 +9,7 @@
             <div class="sidebar sidebar__footer-contact">
                 <p>
                     <strong>
-                        street adress - 01800 - <a href="jhon@doe.com", title="", target="_blank">jhon@doe.com</a>
+                        <a href="mailto:<?php echo get_theme_mod('email_settings'); ?>", target="_blank"><?php echo get_theme_mod('email_settings'); ?></a>
                     </strong>
                 </p>
             </div>
