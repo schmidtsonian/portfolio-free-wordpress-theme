@@ -11,17 +11,16 @@
 * @package estebanco
 */
 
-get_header(); ?>
+get_header(); the_post(); ?>
     <!-- About page -->
     <article id="page__about" class="page page__about cols clearfix">
         
         <div class="cols__2">
             <header class="page__header">
-                <h1 class="font-title__page">Hello</h1>
+                <h1 class="font-title__page"><?php the_title(); ?></h1>
             </header>
             <section class="page__section">
-                <p>Id pariatur magna eu culpa consequat sint incididunt in deserunt aliquip occaecat ullamco. Sit culpa proident est mollit officia minim proident sint veniam labore. Laborum velit sint minim ipsum velit.</p>
-                <p>Nulla officia ea non non cillum id tempor mollit consequat magna consectetur et.</p>
+                <?php the_content(); ?>
             </section>
         </div>
         <div class="cols__2">

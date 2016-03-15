@@ -6,12 +6,12 @@ function add_custom_page($pageName, $pageTitle) {
         $p = array();
         $p['post_title'] = $pageTitle;
         $p['post_name'] = $pageName;
-        $p['post_content'] = "Page content not editable.";
+        $p['post_content'] = "<p>Id pariatur magna eu culpa consequat sint incididunt in deserunt aliquip occaecat ullamco. Sit culpa proident est mollit officia minim proident sint veniam labore. Laborum velit sint minim ipsum velit.</p><p>Nulla officia ea non non cillum id tempor mollit consequat magna consectetur et.</p>";
         $p['post_status'] = 'publish';
         $p['post_type'] = 'page';
         $p['comment_status'] = 'closed';
         $p['ping_status'] = 'closed';
-        $p['post_category'] = array(1); // the default 'Uncategorized'
+        // $p['post_category'] = array(1); // the default 'Uncategorized'
         wp_insert_post($p);
     }
 }
