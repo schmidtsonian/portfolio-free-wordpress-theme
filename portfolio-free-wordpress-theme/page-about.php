@@ -26,19 +26,22 @@ get_header(); the_post(); ?>
         <div class="cols__2">
             <div class="block block__1x1 block__color--">
                 <h4><i>Skill</i></h4>
-                <h2>Web developer</h2>
-                <p>Id pariatur magna eu culpa consequat sint incididunt</p>
+                <h2><?php echo get_theme_mod( 'about_skill_1_settings' ); ?></h2>
+                <p><?php echo get_theme_mod( 'about_skill_desc_1_settings' ); ?></p>
             </div>
-            <div class="block block__1x1" style="background-image:url(/images/profile.png);"></div>
+            <div class="block block__1x1" alt="<?php echo get_bloginfo( 'name' ); ?>" style="
+                <?php if (get_theme_mod( 'logo_settings' )){
+                    echo "background-image:url(" . get_theme_mod( 'avatar_settings') . ");"; 
+                }?>" ></div>
             <div class="block block__1x1 block__color--brown">
                 <h4><i>Skill</i></h4>
-                <h2>Web developer</h2>
-                <p>Id pariatur magna eu culpa consequat sint incididunt</p>
+                <h2><?php echo get_theme_mod( 'about_skill_2_settings' ); ?></h2>
+                <p><?php echo get_theme_mod( 'about_skill_desc_1_settings' ); ?></p>
             </div>
             <div class="block block__1x1 block__color--">
                 <h4><i>Skill</i></h4>
-                <h2>Web developer</h2>
-                <p>Id pariatur magna eu culpa consequat sint incididunt</p>
+                <h2><?php echo get_theme_mod( 'about_skill_3_settings' ); ?></h2>
+                <p><?php echo get_theme_mod( 'about_skill_desc_1_settings' ); ?></p>
             </div>
         </div>
     </article>

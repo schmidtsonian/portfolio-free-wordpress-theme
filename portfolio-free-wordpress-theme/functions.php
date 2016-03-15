@@ -49,13 +49,95 @@ function create_posttype() {
 
 
 
-function theme_customizer( $wp_customize ) {
+function theme_customizer_about( $wp_customize ) {
+    $wp_customize->add_section( 
+        'about_section', 
+        array(
+            'title' => __( 'About' ),
+            'priority' => 30,
+            'description' => '',
+        ) 
+    );
+    
+    $wp_customize->add_setting( 'avatar_settings' );
+    $wp_customize->add_control( 
+        new WP_Customize_Image_Control( 
+            $wp_customize, 
+            'avatar_control', 
+            array(
+                'label' => __( 'Avatar' ),
+                'section' => 'about_section',
+                'settings' => 'avatar_settings',
+            ) 
+        ) 
+    );
+    
+    $wp_customize->add_setting( 'about_skill_1_settings', array( 'default' => 'Web developer') );
+    $wp_customize->add_control( 
+        'about_skill_1_control', 
+        array(
+            'label'    => __( '1. Skill one title' ),
+            'section'  => 'about_section',
+            'settings' => 'about_skill_1_settings',
+        ) 
+    );
+    $wp_customize->add_setting( 'about_skill_desc_1_settings', array( 'default' => 'Skill description') );
+    $wp_customize->add_control( 
+        'about_skill_desc_1_control', 
+        array(
+            'label'    => __( 'Description' ),
+            'section'  => 'about_section',
+            'settings' => 'about_skill_desc_1_settings',
+        ) 
+    );
+    
+    $wp_customize->add_setting( 'about_skill_2_settings', array( 'default' => 'Web developer') );
+    $wp_customize->add_control( 
+        'about_skill_2_control', 
+        array(
+            'label'    => __( '2. Skill one title' ),
+            'section'  => 'about_section',
+            'settings' => 'about_skill_2_settings',
+        ) 
+    );
+    
+    $wp_customize->add_setting( 'about_skill_desc_2_settings', array( 'default' => 'Skill description') );
+    $wp_customize->add_control( 
+        'about_skill_desc_2_control', 
+        array(
+            'label'    => __( 'Description' ),
+            'section'  => 'about_section',
+            'settings' => 'about_skill_desc_2_settings',
+        ) 
+    );
+    
+    $wp_customize->add_setting( 'about_skill_3_settings', array( 'default' => 'Web developer') );
+    $wp_customize->add_control( 
+        'about_skill_3_control', 
+        array(
+            'label'    => __( '3. Skill one title' ),
+            'section'  => 'about_section',
+            'settings' => 'about_skill_3_settings',
+        ) 
+    );
+    
+    $wp_customize->add_setting( 'about_skill_desc_3_settings', array( 'default' => 'Skill description') );
+    $wp_customize->add_control( 
+        'about_skill_desc_3_control', 
+        array(
+            'label'    => __( 'Description' ),
+            'section'  => 'about_section',
+            'settings' => 'about_skill_desc_3_settings',
+        ) 
+    );
+}
+function theme_customizer_home( $wp_customize ) {
     $wp_customize->add_section( 
         'home_section', 
         array(
             'title' => __( 'Home' ),
             'priority' => 30,
-            'description' => 'Upload a logo to replace the default site name and description in the header',
+            'description' => '',
         ) 
     );
     
@@ -154,6 +236,7 @@ add_action('admin_menu', 'add_custom_menu_page');
 add_action('init', 'create_posttype');
 add_action( 'init', 'register_menus' );
 add_filter('wp_nav_menu', 'add_nav_class');
-add_action('customize_register', 'theme_customizer');
+add_action('customize_register', 'theme_customizer_home');
+add_action('customize_register', 'theme_customizer_about');
 
 
