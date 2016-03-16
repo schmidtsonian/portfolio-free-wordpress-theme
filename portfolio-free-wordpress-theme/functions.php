@@ -11,7 +11,6 @@ function add_custom_page($pageName, $pageTitle) {
         $p['post_type'] = 'page';
         $p['comment_status'] = 'closed';
         $p['ping_status'] = 'closed';
-        // $p['post_category'] = array(1); // the default 'Uncategorized'
         wp_insert_post($p);
     }
 }
@@ -25,24 +24,48 @@ function add_custom_menu_page() {
     __('About'), 'manage_options', 'post.php?post='.$page->ID.'&action=edit');
 }
 
-
-function create_posttype() {
+function create_portfolio_posttype() {
     register_post_type('portfolio',
-    array('labels' => array('name' => __('Portfolio'), 'singular_name' => __('Piece'),
-    // 'menu_name'          => _x( 'Books', 'admin menu', 'your-plugin-textdomain' ),
-    // 'name_admin_bar'     => _x( 'Book', 'add new on admin bar', 'your-plugin-textdomain' ),
-    'add_new' => __('Add Piece'), 'add_new_item' => __('Add new Piece'),
-    // 'new_item'           => __( 'New Book', 'your-plugin-textdomain' ),
-    'edit_item' => __('Edit piece'), 'view_item' => __('View piece'), 'all_items' => __('All Pieces'), 'search_items' => __('Search Pieces'),
-    // 'parent_item_colon'  => __( 'Parent Books:', 'your-plugin-textdomain' ),
-    // 'not_found'          => __( 'No books found.', 'your-plugin-textdomain' ),
-    // 'not_found_in_trash' => __( 'No books found in Trash.', 'your-plugin-textdomain' )
-    ),
-    // 'description'        => __( 'Description.', 'your-plugin-textdomain' ),
-    'public ' => true, 'public ly_queryable' => true, 'show_ui' => true, 'show_in_menu' => true, 'query_var' => true, 'rewrite' => array('slug' => 'portfolio'), 'capability_type' => 'post', 'has_archive' => true, 'hierarchical' => false,
-    // 'menu_position'      => null,
-    //   'rewrite' => array('slug' => 'products'),
+        array( 
+            'labels' => array('name' => __('Portfolio'), 
+            'singular_name' => __('Piece'),
+            'menu_name' => __( 'Portfolio' ),
+            'add_new' => __('Add Piece'), 
+            'add_new_item' => __('Add new Piece'),
+            'new_item' => __( 'New Piece' ),
+            'edit_item' => __('Edit piece'), 
+            'view_item' => __('View piece'), 
+            'all_items' => __('All Pieces'), 
+            'search_items' => __('Search Pieces'),
+            'not_found'  => __( 'No pieces found.'),
+            'not_found_in_trash' => __( 'No pieces found in Trash.')
+        ),
+        'description'        => __( 'Upload your diferents pieces.' ),
+        'public ' => true, 
+        'exclude_from_search' => false,
+        'publicly_queryable' => true, 
+        'show_ui' => true, 
+        'show_in_menu' => true, 
+        'query_var' => true, 
+        'rewrite' => array('slug' => 'portfolio'), 
+        'capability_type' => 'post', 
+        'has_archive' => true, 
+        'hierarchical' => false,
     ));
+}
+
+function create_portfolio_taxonomies () {
+
+	$args = array(
+		'hierarchical'      => true,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'categories' ),
+	);
+
+	register_taxonomy( 'category', array( 'portfolio' ), $args );
+
 }
 
 
@@ -233,7 +256,8 @@ function add_nav_class($output) {
 
 add_custom_page('about', 'About');
 add_action('admin_menu', 'add_custom_menu_page');
-add_action('init', 'create_posttype');
+add_action('init', 'create_portfolio_posttype');
+add_action( 'init', 'create_portfolio_taxonomies', 0 );
 add_action( 'init', 'register_menus' );
 add_filter('wp_nav_menu', 'add_nav_class');
 add_action('customize_register', 'theme_customizer_home');
