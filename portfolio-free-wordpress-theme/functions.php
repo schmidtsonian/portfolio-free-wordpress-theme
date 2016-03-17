@@ -1,16 +1,16 @@
 <?php 
-function add_custom_page($pageName, $pageTitle) {
+function add_custom_page ( $pageName, $pageTitle ) {
 
-    $page = get_page_by_path($pageName);
-    if (!$page) {
-        $p = array();
-        $p['post_title'] = $pageTitle;
-        $p['post_name'] = $pageName;
-        $p['post_content'] = "<p>Id pariatur magna eu culpa consequat sint incididunt in deserunt aliquip occaecat ullamco. Sit culpa proident est mollit officia minim proident sint veniam labore. Laborum velit sint minim ipsum velit.</p><p>Nulla officia ea non non cillum id tempor mollit consequat magna consectetur et.</p>";
-        $p['post_status'] = 'publish';
-        $p['post_type'] = 'page';
+    $page = get_page_by_path( $pageName );
+    if ( !$page ) {
+                          $p = array();
         $p['comment_status'] = 'closed';
-        $p['ping_status'] = 'closed';
+          $p['post_content'] = "<p>Id pariatur magna eu culpa consequat sint incididunt in deserunt aliquip occaecat ullamco. Sit culpa proident est mollit officia minim proident sint veniam labore. Laborum velit sint minim ipsum velit.</p><p>Nulla officia ea non non cillum id tempor mollit consequat magna consectetur et.</p>";
+            $p['post_title'] = $pageTitle;
+             $p['post_name'] = $pageName;
+           $p['post_status'] = 'publish';
+             $p['post_type'] = 'page';
+           $p['ping_status'] = 'closed';
         wp_insert_post($p);
     }
 }
@@ -19,38 +19,42 @@ function add_custom_page($pageName, $pageTitle) {
 
 function add_custom_menu_page() {
     $page = get_page_by_path('about');
-    add_menu_page(
-    __('About'),
-    __('About'), 'manage_options', 'post.php?post='.$page->ID.'&action=edit');
+    add_menu_page( 
+        __('About'), 
+        __('About'), 
+        'manage_options', 
+        'post.php?post=' . $page->ID . '&action=edit' 
+    );
 }
 
 function create_portfolio_posttype() {
     register_post_type('portfolio',
         array( 
-            'labels' => array('name' => __('Portfolio'), 
-            'singular_name' => __('Piece'),
-            'menu_name' => __( 'Portfolio' ),
-            'add_new' => __('Add Piece'), 
-            'add_new_item' => __('Add new Piece'),
-            'new_item' => __( 'New Piece' ),
-            'edit_item' => __('Edit piece'), 
-            'view_item' => __('View piece'), 
-            'all_items' => __('All Pieces'), 
-            'search_items' => __('Search Pieces'),
-            'not_found'  => __( 'No pieces found.'),
+                        'labels' => array('name' => __('Portfolio'), 
+                 'singular_name' => __('Piece'),
+                     'menu_name' => __( 'Portfolio' ),
+                       'add_new' => __('Add Piece'), 
+                  'add_new_item' => __('Add new Piece'),
+                      'new_item' => __( 'New Piece' ),
+                     'edit_item' => __('Edit piece'), 
+                     'view_item' => __('View piece'), 
+                     'all_items' => __('All Pieces'), 
+                  'search_items' => __('Search Pieces'),
+                     'not_found' => __( 'No pieces found.'),
             'not_found_in_trash' => __( 'No pieces found in Trash.')
         ),
-        'description'        => __( 'Upload your diferents pieces.' ),
-        'public ' => true, 
+                'description' => __( 'Upload your diferents pieces.' ),
+                    'public ' => true, 
         'exclude_from_search' => false,
-        'publicly_queryable' => true, 
-        'show_ui' => true, 
-        'show_in_menu' => true, 
-        'query_var' => true, 
-        'rewrite' => array('slug' => 'portfolio'), 
-        'capability_type' => 'post', 
-        'has_archive' => true, 
-        'hierarchical' => false,
+         'publicly_queryable' => true, 
+                    'show_ui' => true, 
+               'show_in_menu' => true, 
+                  'query_var' => true, 
+                'has_archive' => true, 
+               'hierarchical' => false,
+            'capability_type' => 'post', 
+                   'supports' => array ( 'title', 'editor', 'thumbnail' ),
+                    'rewrite' => array( 'slug' => 'portfolio' ), 
     ));
 }
 
@@ -253,14 +257,18 @@ function add_nav_class($output) {
     return $output;
 }
 
+function custom_theme_setup() {
+	add_theme_support( 'post-thumbnails' );
+}
 
 add_custom_page('about', 'About');
-add_action('admin_menu', 'add_custom_menu_page');
-add_action('init', 'create_portfolio_posttype');
-add_action( 'init', 'create_portfolio_taxonomies', 0 );
-add_action( 'init', 'register_menus' );
-add_filter('wp_nav_menu', 'add_nav_class');
-add_action('customize_register', 'theme_customizer_home');
-add_action('customize_register', 'theme_customizer_about');
+add_action(  'after_setup_theme', 'custom_theme_setup' );
+add_action(         'admin_menu', 'add_custom_menu_page');
+add_action(               'init', 'create_portfolio_posttype');
+add_action(               'init', 'create_portfolio_taxonomies', 0 );
+add_action(               'init', 'register_menus' );
+add_filter(        'wp_nav_menu', 'add_nav_class');
+add_action( 'customize_register', 'theme_customizer_home');
+add_action( 'customize_register', 'theme_customizer_about');
 
 
