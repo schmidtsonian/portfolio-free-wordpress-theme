@@ -29,19 +29,20 @@ function add_custom_menu_page() {
 
 function create_portfolio_posttype() {
     register_post_type('portfolio',
-        array( 
-                        'labels' => array('name' => __('Portfolio'), 
-                 'singular_name' => __('Piece'),
-                     'menu_name' => __( 'Portfolio' ),
-                       'add_new' => __('Add Piece'), 
-                  'add_new_item' => __('Add new Piece'),
-                      'new_item' => __( 'New Piece' ),
-                     'edit_item' => __('Edit piece'), 
-                     'view_item' => __('View piece'), 
-                     'all_items' => __('All Pieces'), 
-                  'search_items' => __('Search Pieces'),
-                     'not_found' => __( 'No pieces found.'),
-            'not_found_in_trash' => __( 'No pieces found in Trash.')
+        array(
+            'labels' => array(
+                              'name' => __('Portfolio'), 
+                     'singular_name' => __('Piece'),
+                         'menu_name' => __( 'Portfolio' ),
+                           'add_new' => __('Add Piece'), 
+                      'add_new_item' => __('Add new Piece'),
+                          'new_item' => __( 'New Piece' ),
+                         'edit_item' => __('Edit piece'), 
+                         'view_item' => __('View piece'), 
+                         'all_items' => __('All Pieces'), 
+                      'search_items' => __('Search Pieces'),
+                         'not_found' => __( 'No pieces found.'),
+                'not_found_in_trash' => __( 'No pieces found in Trash.')
         ),
                 'description' => __( 'Upload your diferents pieces.' ),
                     'public ' => true, 
@@ -61,27 +62,23 @@ function create_portfolio_posttype() {
 function create_portfolio_taxonomies () {
 
 	$args = array(
-		'hierarchical'      => true,
-		'show_ui'           => true,
+                   'public' => false,
+		     'hierarchical' => true,
+		          'show_ui' => true,
 		'show_admin_column' => true,
-		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'categories' ),
+		        'query_var' => true,
+		          'rewrite' => array( 'slug' => 'categories' ),
 	);
 
-	register_taxonomy( 'category', array( 'portfolio' ), $args );
-
+	register_taxonomy( 'cats', array( 'portfolio' ), $args );
 }
-
-
-
-
 
 function theme_customizer_about( $wp_customize ) {
     $wp_customize->add_section( 
         'about_section', 
         array(
-            'title' => __( 'About' ),
-            'priority' => 30,
+                  'title' => __( 'About' ),
+               'priority' => 30,
             'description' => '',
         ) 
     );
@@ -92,8 +89,8 @@ function theme_customizer_about( $wp_customize ) {
             $wp_customize, 
             'avatar_control', 
             array(
-                'label' => __( 'Avatar' ),
-                'section' => 'about_section',
+                   'label' => __( 'Avatar' ),
+                 'section' => 'about_section',
                 'settings' => 'avatar_settings',
             ) 
         ) 
@@ -103,8 +100,8 @@ function theme_customizer_about( $wp_customize ) {
     $wp_customize->add_control( 
         'about_skill_1_control', 
         array(
-            'label'    => __( '1. Skill one title' ),
-            'section'  => 'about_section',
+               'label' => __( '1. Skill one title' ),
+             'section' => 'about_section',
             'settings' => 'about_skill_1_settings',
         ) 
     );
@@ -112,8 +109,8 @@ function theme_customizer_about( $wp_customize ) {
     $wp_customize->add_control( 
         'about_skill_desc_1_control', 
         array(
-            'label'    => __( 'Description' ),
-            'section'  => 'about_section',
+               'label' => __( 'Description' ),
+             'section' => 'about_section',
             'settings' => 'about_skill_desc_1_settings',
         ) 
     );
@@ -122,8 +119,8 @@ function theme_customizer_about( $wp_customize ) {
     $wp_customize->add_control( 
         'about_skill_2_control', 
         array(
-            'label'    => __( '2. Skill one title' ),
-            'section'  => 'about_section',
+               'label' => __( '2. Skill one title' ),
+             'section' => 'about_section',
             'settings' => 'about_skill_2_settings',
         ) 
     );
@@ -132,8 +129,8 @@ function theme_customizer_about( $wp_customize ) {
     $wp_customize->add_control( 
         'about_skill_desc_2_control', 
         array(
-            'label'    => __( 'Description' ),
-            'section'  => 'about_section',
+               'label' => __( 'Description' ),
+             'section' => 'about_section',
             'settings' => 'about_skill_desc_2_settings',
         ) 
     );
@@ -142,8 +139,8 @@ function theme_customizer_about( $wp_customize ) {
     $wp_customize->add_control( 
         'about_skill_3_control', 
         array(
-            'label'    => __( '3. Skill one title' ),
-            'section'  => 'about_section',
+               'label' => __( '3. Skill one title' ),
+             'section' => 'about_section',
             'settings' => 'about_skill_3_settings',
         ) 
     );
@@ -152,8 +149,8 @@ function theme_customizer_about( $wp_customize ) {
     $wp_customize->add_control( 
         'about_skill_desc_3_control', 
         array(
-            'label'    => __( 'Description' ),
-            'section'  => 'about_section',
+               'label' => __( 'Description' ),
+             'section' => 'about_section',
             'settings' => 'about_skill_desc_3_settings',
         ) 
     );
@@ -162,8 +159,8 @@ function theme_customizer_home( $wp_customize ) {
     $wp_customize->add_section( 
         'home_section', 
         array(
-            'title' => __( 'Home' ),
-            'priority' => 30,
+                  'title' => __( 'Home' ),
+               'priority' => 30,
             'description' => '',
         ) 
     );
@@ -174,8 +171,8 @@ function theme_customizer_home( $wp_customize ) {
             $wp_customize, 
             'logo_control', 
             array(
-                'label' => __( 'Logo' ),
-                'section' => 'home_section',
+                   'label' => __( 'Logo' ),
+                 'section' => 'home_section',
                 'settings' => 'logo_settings',
             ) 
         ) 
@@ -187,8 +184,8 @@ function theme_customizer_home( $wp_customize ) {
             $wp_customize, 
             'banner_control', 
             array(
-                'label' => __( 'Banner image' ),
-                'section' => 'home_section',
+                   'label' => __( 'Banner image' ),
+                 'section' => 'home_section',
                 'settings' => 'banner_settings',
             ) 
         ) 
@@ -200,8 +197,8 @@ function theme_customizer_home( $wp_customize ) {
             $wp_customize, 
             'bgabout_control', 
             array(
-                'label' => __( 'Background about' ),
-                'section' => 'home_section',
+                   'label' => __( 'Background about' ),
+                 'section' => 'home_section',
                 'settings' => 'bgabout_settings',
             ) 
         ) 
@@ -211,8 +208,8 @@ function theme_customizer_home( $wp_customize ) {
     $wp_customize->add_control( 
         'author_control', 
         array(
-            'label'    => __( 'Your name' ),
-            'section'  => 'home_section',
+               'label' => __( 'Your name' ),
+             'section' => 'home_section',
             'settings' => 'name_settings',
         ) 
     );
@@ -220,8 +217,8 @@ function theme_customizer_home( $wp_customize ) {
     $wp_customize->add_control( 
         'description_control', 
         array(
-            'label' => __( 'About You' ),
-            'section' => 'home_section',
+               'label' => __( 'About You' ),
+             'section' => 'home_section',
             'settings' => 'description_settings',
         ) 
     );
@@ -230,8 +227,8 @@ function theme_customizer_home( $wp_customize ) {
     $wp_customize->add_control( 
         'email_control', 
         array(
-            'label' => __( 'Email' ),
-            'section' => 'home_section',
+               'label' => __( 'Email' ),
+             'section' => 'home_section',
             'settings' => 'email_settings',
         ) 
     );
@@ -240,8 +237,8 @@ function theme_customizer_home( $wp_customize ) {
     $wp_customize->add_control( 
         'github_control', 
         array(
-            'label' => __( 'Github' ),
-            'section' => 'home_section',
+               'label' => __( 'Github' ),
+             'section' => 'home_section',
             'settings' => 'github_settings',
         ) 
     );
