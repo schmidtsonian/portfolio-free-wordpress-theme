@@ -36,97 +36,39 @@ get_header(); ?>
             <!-- /Nav filters -->
             
             <div class="row clearfix">
-                    <?php
-                    while ( have_posts() ) : the_post();
-                        // the_title();
-                    endwhile;
-                    wp_reset_query();
+                <?php
+                $count = 0;
+                $class = '';
+                while ( have_posts() ) : the_post();
+                    
+                    switch ($count) {
+                        case 0: $class = 'block__2x2--post-thumb'; break;
+                        case 1: $class = 'block__2x1--post-thumb'; break;
+                        case 2: $class = 'block__1x1--post-thumb'; break;
+                        case 3: $class = 'block__1x1--post-thumb'; break;
+                        case 4: $class = 'block__1x1--post-thumb'; break;
+                        case 5: $class = 'block__1x1--post-thumb'; break;
+                        case 6: $class = 'block__2x1--post-thumb'; break;
+                        case 7: $class = 'block__2x2--post-thumb'; break;
+                        case 8: $class = 'block__1x1--post-thumb'; break;
+                        case 9: $class = 'block__1x1--post-thumb'; break;
+                        case 10: $class = 'block__2x1--post-thumb'; break;
+                        case 11: $class = 'block__2x1--post-thumb'; break;
+                        case 12: $class = 'block__1x1--post-thumb'; break;
+                        case 13: $class = 'block__1x1--post-thumb'; break;
+                    }
+                    $count++;
                     ?>
-                <a title="" href="#" class="block block__2x2--post-thumb block__color--withe" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400);">
-                    <strong class="block__caption">
-                        <span>tit 2x2 asd asd asd asd asd asd asd a ds</span>
-                    </strong>
-                </a>
+                    <a title="<?php the_title(); ?>" href="<?php echo get_permalink(); ?>" class="block <?php echo $class; ?> block__color--withe" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400);">
+                        <strong class="block__caption">
+                            <span><?php the_title(); ?></span>
+                        </strong>
+                    </a>
+                    <?php 
+                endwhile;
+                wp_reset_query();
+                ?>
                 
-                <a title="" href="#" class="block block__2x1--post-thumb block__color--white", style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400);" >
-                    
-                    <strong class="block__caption">
-                        <span>tit 2x1</span>
-                    </strong>
-                </a>
-                
-                <a title="" href="#" class="block block__1x1--post-thumb block__color--white", style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400);" >
-                    
-                    <strong class="block__caption">
-                        <span>tit 1x1</span>
-                    </strong>
-                </a>
-                <a title="" href="#" class="block block__1x1--post-thumb block__color--white", style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400);" >
-                    
-                    <strong class="block__caption">
-                        <span>tit 1x1</span>
-                    </strong>
-                </a>
-                <a title="" href="#" class="block block__1x1--post-thumb block__color--white", style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400);" >
-                    
-                    <strong class="block__caption">
-                        <span>tit 1x1</span>
-                    </strong>
-                </a>
-                <a title="" href="#" class="block block__1x1--post-thumb block__color--white", style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400);" >
-                    
-                    <strong class="block__caption">
-                        <span>tit 1x1</span>
-                    </strong>
-                </a>
-                <a title="" href="#" class="block block__2x1--post-thumb block__color--white", style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400);" >
-                    
-                    <strong class="block__caption">
-                        <span>tit 2x1</span>
-                    </strong>
-                </a>
-                
-                <a title="" href="#" class="block block__2x2--post-thumb block__color--withe" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400);">
-                    <strong class="block__caption">
-                        <span>tit 2x2 asd asd asd asd asd asd asd a ds</span>
-                    </strong>
-                </a>
-                <a title="" href="#" class="block block__1x1--post-thumb block__color--white", style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400);" >
-                    
-                    <strong class="block__caption">
-                        <span>tit 1x1</span>
-                    </strong>
-                </a>
-                <a title="" href="#" class="block block__1x1--post-thumb block__color--white", style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400);" >
-                    
-                    <strong class="block__caption">
-                        <span>tit 1x1</span>
-                    </strong>
-                </a>
-                <a title="" href="#" class="block block__2x1--post-thumb block__color--white", style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400);" >
-                    
-                    <strong class="block__caption">
-                        <span>tit 2x1</span>
-                    </strong>
-                </a>
-                <a title="" href="#" class="block block__2x1--post-thumb block__color--white", style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400);" >
-                    
-                    <strong class="block__caption">
-                        <span>tit 2x1</span>
-                    </strong>
-                </a>
-                <a title="" href="#" class="block block__1x1--post-thumb block__color--white", style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400);" >
-                    
-                    <strong class="block__caption">
-                        <span>tit 1x1</span>
-                    </strong>
-                </a>
-                <a title="" href="#" class="block block__1x1--post-thumb block__color--white", style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400);" >
-                    
-                    <strong class="block__caption">
-                        <span>tit 1x1</span>
-                    </strong>
-                </a>
             </div>
         </section>
     </div>
