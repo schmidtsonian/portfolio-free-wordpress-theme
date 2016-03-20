@@ -1,4 +1,25 @@
 <?php 
+
+// 564x400
+// 468x400
+// 
+// 
+// 
+
+function create_thumb_sizes () {
+    
+    add_theme_support( 'post-thumbnails' );
+    
+    update_option('thumbnail_size_w', 564);
+    update_option('thumbnail_size_h', 400);
+
+    update_option('medium_size_w', 468);
+    update_option('medium_size_h', 400);
+
+    update_option('large_size_w', 1280);
+    update_option('large_size_h', 400);
+}
+
 function add_custom_page ( $pageName, $pageTitle ) {
 
     $page = get_page_by_path( $pageName );
@@ -261,6 +282,7 @@ function custom_theme_setup() {
 add_custom_page('about', 'About');
 add_action(  'after_setup_theme', 'custom_theme_setup' );
 add_action(         'admin_menu', 'add_custom_menu_page');
+add_action(               'init', 'create_thumb_sizes');
 add_action(               'init', 'create_portfolio_posttype');
 add_action(               'init', 'create_portfolio_taxonomies', 0 );
 add_action(               'init', 'register_menus' );

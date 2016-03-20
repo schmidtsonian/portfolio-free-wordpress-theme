@@ -42,24 +42,30 @@ get_header(); ?>
                 while ( have_posts() ) : the_post();
                     
                     switch ($count) {
-                        case 0: $class = 'block__2x2--post-thumb'; break;
-                        case 1: $class = 'block__2x1--post-thumb'; break;
-                        case 2: $class = 'block__1x1--post-thumb'; break;
-                        case 3: $class = 'block__1x1--post-thumb'; break;
-                        case 4: $class = 'block__1x1--post-thumb'; break;
-                        case 5: $class = 'block__1x1--post-thumb'; break;
-                        case 6: $class = 'block__2x1--post-thumb'; break;
-                        case 7: $class = 'block__2x2--post-thumb'; break;
-                        case 8: $class = 'block__1x1--post-thumb'; break;
-                        case 9: $class = 'block__1x1--post-thumb'; break;
-                        case 10: $class = 'block__2x1--post-thumb'; break;
-                        case 11: $class = 'block__2x1--post-thumb'; break;
-                        case 12: $class = 'block__1x1--post-thumb'; break;
-                        case 13: $class = 'block__1x1--post-thumb'; break;
+                        case 0: $class = '2x2'; break;
+                        case 1: $class = '2x1'; break;
+                        case 2: $class = '1x1'; break;
+                        case 3: $class = '1x1'; break;
+                        case 4: $class = '1x1'; break;
+                        case 5: $class = '1x1'; break;
+                        case 6: $class = '2x1'; break;
+                        case 7: $class = '2x2'; break;
+                        case 8: $class = '1x1'; break;
+                        case 9: $class = '1x1'; break;
+                        case 10: $class = '2x1'; break;
+                        case 11: $class = '2x1'; break;
+                        case 12: $class = '1x1'; break;
+                        case 13: $class = '1x1'; break;
                     }
                     $count++;
+                    
+                    $thumb = 'https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400';
+                    if( has_post_thumbnail() ){
+                        
+                        $thumb = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                    }
                     ?>
-                    <a title="<?php the_title(); ?>" href="<?php echo get_permalink(); ?>" class="block <?php echo $class; ?> block__color--withe" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=23&txt=564%C3%97400&w=564&h=400);">
+                    <a title="<?php the_title(); ?>" href="<?php echo get_permalink(); ?>" class="block block__<?php echo $class; ?>--post-thumb block__color--withe" style="background-image:url(<?php echo $thumb; ?>);">
                         <strong class="block__caption">
                             <span><?php the_title(); ?></span>
                         </strong>
