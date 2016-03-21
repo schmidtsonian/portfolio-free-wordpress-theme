@@ -26,7 +26,7 @@ function add_custom_page ( $pageName, $pageTitle ) {
     if ( !$page ) {
                           $p = array();
         $p['comment_status'] = 'closed';
-          $p['post_content'] = "<p>Id pariatur magna eu culpa consequat sint incididunt in deserunt aliquip occaecat ullamco. Sit culpa proident est mollit officia minim proident sint veniam labore. Laborum velit sint minim ipsum velit.</p><p>Nulla officia ea non non cillum id tempor mollit consequat magna consectetur et.</p>";
+          $p['post_content'] = "<p>Id pariatur magna eu culpa consequat sint incididunt in deserunt aliquip occaecat ullamco.</p>";
             $p['post_title'] = $pageTitle;
              $p['post_name'] = $pageName;
            $p['post_status'] = 'publish';
@@ -39,7 +39,9 @@ function add_custom_page ( $pageName, $pageTitle ) {
 
 
 function add_custom_menu_page() {
+    
     $page = get_page_by_path('about');
+    
     add_menu_page( 
         __('About'), 
         __('About'), 
@@ -278,8 +280,13 @@ function add_nav_class($output) {
 function custom_theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 }
+function new_excerpt_length($length) {
+	return 15;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
 
 add_custom_page('about', 'About');
+add_custom_page('blog', 'Blog');
 add_action(  'after_setup_theme', 'custom_theme_setup' );
 add_action(         'admin_menu', 'add_custom_menu_page');
 add_action(               'init', 'create_thumb_sizes');
