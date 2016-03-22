@@ -21,6 +21,12 @@
             </div>
             <!-- /Sidebar footer copyright -->
         </footer>
+        <?php wp_footer(); ?>
+        <script>
+            (function($) {
+                // dentro de esta función $() funcionará como un álias de jQuery() 
+            })(jQuery);
+        </script>
     </body>
     <!-- /Main Foote -->
 </html>

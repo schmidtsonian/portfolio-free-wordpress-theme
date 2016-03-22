@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Estebanco</title>
-        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="ico" href="" sizes="32x32">
-        <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>">
+        <?php  wp_head(); ?>
+        
     </head>
     <body>
         <!-- Main Header -->
