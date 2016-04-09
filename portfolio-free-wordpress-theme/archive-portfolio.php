@@ -71,6 +71,9 @@ get_header(); ?>
                         </strong>
                     </a>
                     <?php 
+                    if( $count >= 14 ){
+                        $count = 0;
+                    }
                 endwhile;
                 wp_reset_query();
                 ?>
