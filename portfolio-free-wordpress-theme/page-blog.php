@@ -17,8 +17,12 @@ get_header(); ?>
         <section class="page__section cols clearfix">
             <div class="cols__2 page__blog__col">
                 <!--<h1 class="clearfix"><?php the_title(); ?></h1>-->
-                <?php 
-                    query_posts( 'posts_per_page=6' );
+                
+                <?php
+
+                    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1; 
+                    query_posts( 'posts_per_page=6&paged=' . $paged );
+                    
                     
                     while ( have_posts() ) : the_post();
                 ?>
@@ -39,6 +43,9 @@ get_header(); ?>
                 
                 <?php
                     endwhile;
+                    
+                    next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentyeleven' ) );
+                    previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) );
                     wp_reset_query();
                 ?>
             </div>
