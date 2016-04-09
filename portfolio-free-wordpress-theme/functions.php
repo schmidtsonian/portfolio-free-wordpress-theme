@@ -321,3 +321,8 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
     }
     add_action( 'wp_head', 'theme_slug_render_title' );
 }
+
+if( !is_admin()){
+    
+	wp_deregister_script('jquery');
+}

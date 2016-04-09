@@ -18,7 +18,7 @@
                     endif; ?>" 
                     alt="<?php echo get_bloginfo( 'name' ); ?>" />
             </a>
-            <nav id="main-header__nav" class="main-header__nav">
+            <nav id="js-main-header__nav" class="main-header__nav">
             <?php echo strip_tags(wp_nav_menu( 
                 array( 
                      'theme_location' => 'header-menu',
@@ -31,7 +31,7 @@
                 ) 
             ), '<a>'); ?>
             </nav>
-            <div id="main-header__button" class="main-header__button">
+            <div id="js-main-header__button" class="main-header__button">
                 <span class="center"></span>
                 <span class="center"></span>
                 <span class="center"></span>
@@ -40,4 +40,4 @@
         <!-- /Main Header -->
         
         <!-- Main Container -->
-        <div id="main-container" class="main-container">
+        <div id="js-main-container" class="main-container">

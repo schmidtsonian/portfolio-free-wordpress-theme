@@ -21,12 +21,11 @@
             </div>
             <!-- /Sidebar footer copyright -->
         </footer>
+        
+        <div id="#js-overlay-loader" class="full overlay-loader"></div>
         <?php wp_footer(); ?>
-        <script>
-            (function($) {
-                // dentro de esta función $() funcionará como un álias de jQuery() 
-            })(jQuery);
-        </script>
+        <script src="<?php bloginfo('template_url'); ?>/js/vendor.js"></script>
+        <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
     </body>
     <!-- /Main Foote -->
 </html>
