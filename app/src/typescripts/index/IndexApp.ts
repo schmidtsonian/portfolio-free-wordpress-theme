@@ -58,7 +58,7 @@ module index {
             
             this.router
                 .add(()=> {
-                    this.loader.load(this.router.getpathname(), () => {  } );
+                    this.loader.open(this.router.getpathname());
                 })
                 .listen();
             // this.router.check();

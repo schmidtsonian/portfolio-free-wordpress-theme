@@ -19,21 +19,45 @@ module common{
             this.body = $( 'body' );
         }
         
-        load ( path: string, onLoad: Function ) : void {
+        private animateOpen() : JQueryPromise<{}> {
             
-            this.body.css( { 'overflow': 'none' } );
+            var defer = $.Deferred();
+            
+            this.body.css( { 'overflow': 'hidden' } );
             this.body.scrollTop( 0 );
             TweenMax.set( this.overlay, { left: 0 } );
+            TweenMax.to(this.result, 0.25, { y: "100px", opacity: 0, onComplete: () => { defer.resolve(); } });
+    
+            return defer.promise();    
+        }
+        
+        private animateClose() : JQueryPromise<{}> {
             
-            this.result.load( path + ' ' + this.container, () => {
-                onLoad();
-                TweenMax.to( this.overlay, 0.25, {
-                    left: '-100%', 
-                    onComplete: () =>  { 
-                        this.body.css( { 'overflow': 'auto' } );
-                    } 
-                });
-            } );
+            var defer = $.Deferred();
+            
+            TweenMax.to(this.result, 0.25, { y: 0, opacity: 1, onComplete: () => { 
+                TweenMax.set( this.overlay, { left: '-100%' } );
+                this.body.css( { 'overflow': 'auto' } );
+                defer.resolve(); 
+            } });
+    
+            return defer.promise();    
+        }
+        
+        private load( path: string ) : JQueryPromise<{}> {
+            
+            var defer = $.Deferred();
+            this.result.load( path + ' ' + this.container, defer.resolve );
+            return defer.promise();
+        }
+        
+        open ( path: string ) : void {
+            
+            this.animateOpen()
+                .then( this.load.bind( this, path ))
+                .then( this.animateClose.bind( this ) );
+            
+            
         }
     }
 }
