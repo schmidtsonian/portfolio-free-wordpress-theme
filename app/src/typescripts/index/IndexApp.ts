@@ -29,7 +29,7 @@ module index {
 	export class IndexApp {
 		
         private router:Router;
-        private viewManager:ViewManager;
+        // private viewManager:ViewManager;
         private loader:Loader;
         
         private mainMenu:MainMenu;
@@ -41,7 +41,7 @@ module index {
 		constructor () {
             
             this.router = new Router();
-            this.viewManager = new ViewManager();
+            // this.viewManager = new ViewManager();
             this.loader = new Loader();
 		}
 
@@ -52,9 +52,15 @@ module index {
             $(document).on("click", "a.page-load", (e: JQueryEventObject) => {
                 e.preventDefault();
                 var path = $(e.currentTarget).attr("href");
-                this.loader.load(path, () => { this.router.navigate(path): } );
+                this.router.navigate(path);
                 
-            })
+            });
+            
+            this.router
+                .add(()=> {
+                    this.loader.load(this.router.getpathname(), () => {  } );
+                })
+                .listen();
             // this.router.check();
         }
 	}
