@@ -11,7 +11,7 @@ var app: IndexApp;
 // });
 
 
-(function($) {
+(function($: any) {
     app = new IndexApp();
 	app.init(); 
 })(jQuery);

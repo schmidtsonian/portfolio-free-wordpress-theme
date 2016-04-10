@@ -4,6 +4,7 @@
 /// <reference path="../common/Router.ts" />
 /// <reference path="../common/ViewManager.ts" />
 /// <reference path="../common/View.ts" />
+/// <reference path="../common/Loader.ts" />
 
 /// <reference path="components/MainMenu.ts" />
 
@@ -13,6 +14,7 @@ module index {
     
     import Router = common.Router;
     import ViewManager = common.ViewManager;
+    import Loader = common.Loader;
     // import View = common.View;
     
     import MainMenu = components.MainMenu;
@@ -28,6 +30,7 @@ module index {
 		
         private router:Router;
         private viewManager:ViewManager;
+        private loader:Loader;
         
         private mainMenu:MainMenu;
         
@@ -39,6 +42,7 @@ module index {
             
             this.router = new Router();
             this.viewManager = new ViewManager();
+            this.loader = new Loader();
 		}
 
 		init ():void {
@@ -50,10 +54,11 @@ module index {
                 e.preventDefault();
                 var path = $(e.currentTarget).attr("href");
                 this.router.navigate(path);
+                this.loader.load(path);
                 
-                $("#js-main-container").load( path + " #js-main-container", () => {
-                    console.log("done!");
-                } );
+                // $("#js-main-container").load( path + " #js-main-container", () => {
+                //     // console.log("done!");
+                // } );
             })
             // this.router.check();
         }
