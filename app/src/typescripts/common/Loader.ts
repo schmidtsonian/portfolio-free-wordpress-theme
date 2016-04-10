@@ -44,10 +44,40 @@ module common{
             return defer.promise();    
         }
         
+        private processImages () : JQueryPromise<{}> {
+            var defer = $.Deferred();
+            
+            var images = this.result.find( '[data-load]');
+            var count = 0;
+            for (var index = 0; index < images.length; index++) {
+                var src = $( images[index] ).data("load");
+                
+                var img = new Image();
+                img.src = src;
+                img.onload = () => { 
+                    count++;
+                    if( count >= images.length ){
+                        defer.resolve();
+                    }
+                };
+                img.onerror = () => {
+                    count++;
+                    if( count >= images.length ){
+                        defer.resolve();
+                    }
+                }
+            }
+            
+            return defer.promise();
+        }
+        
         private load( path: string ) : JQueryPromise<{}> {
             
             var defer = $.Deferred();
-            this.result.load( path + ' ' + this.container, defer.resolve );
+            this.result.load( path + ' ' + this.container, () => {
+                
+                this.processImages().then( defer.resolve ); 
+            });
             return defer.promise();
         }
         

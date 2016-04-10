@@ -20,7 +20,7 @@ get_header(); ?>
             <div class="cols__2 page__blog__col">
                 
                 <a href="#" class="page-load block block__2--post", title="Title post">
-                    <img src="http://placehold.it/450x250", width="", height="", alt="Title post">
+                    <img data-load="http://placehold.it/450x250" src="http://placehold.it/450x250", width="", height="", alt="Title post">
                     <h2 class="font-title__thumb">
                         Title post
                     </h2>

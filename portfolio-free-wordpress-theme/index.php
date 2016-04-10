@@ -15,13 +15,18 @@ get_header(); ?>
     <!-- Home page -->
     <article id="page__home" class="page page__home">
         <!-- Banner page Home -->
-        <div class="banner banner__page-home" style="background-image:url(<?php echo get_theme_mod('banner_settings'); ?>)">
-            <div class="banner__page-home__bio center-left" style="background-image:url(<?php 
-                    if (get_theme_mod( 'bgabout_settings' )) : 
-                        echo get_theme_mod( 'bgabout_settings'); 
-                    else: 
-                        echo 'https://placeholdit.imgix.net/~text?txtsize=23&txt=220%C3%97300&w=220&h=300'; 
-                    endif; ?>);">
+        
+        <?php
+        
+            $banner = get_theme_mod('banner_settings');
+            $bgBio = 'https://placeholdit.imgix.net/~text?txtsize=23&txt=220%C3%97300&w=220&h=300'; 
+            if (get_theme_mod( 'bgabout_settings' )) : 
+                $bgBanner = get_theme_mod( 'bgabout_settings');  
+            endif; 
+        ?>
+        <div data-load="<?php echo $banner; ?>" class="banner banner__page-home" style="background-image:url(<?php echo $banner; ?>)">
+            
+            <div data-load="<?php echo $bgBanner; ?>"class="banner__page-home__bio center-left" style="background-image:url(<?php echo $bgBanner?>);">
                 <p class="b b1">
                     <b>Hellow!</b> 
                 </p>

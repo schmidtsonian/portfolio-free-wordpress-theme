@@ -24,7 +24,9 @@
             <!-- /Sidebar footer copyright -->
         </footer>
         
-        <div id="js-overlay-loader" class="full overlay-loader"></div>
+        <div id="js-overlay-loader" class="full overlay-loader">
+            <span id="js-overlay-loader--bar" class="overlay-loader--bar"></span>
+        </div>
         <?php wp_footer(); ?>
         <script src="<?php bloginfo('template_url'); ?>/js/vendor.js"></script>
         <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>

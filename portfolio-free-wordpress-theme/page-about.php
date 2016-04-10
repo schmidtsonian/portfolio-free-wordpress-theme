@@ -29,10 +29,14 @@ get_header(); the_post(); ?>
                 <h2><?php echo get_theme_mod( 'about_skill_1_settings' ); ?></h2>
                 <p><?php echo get_theme_mod( 'about_skill_desc_1_settings' ); ?></p>
             </div>
-            <div class="block block__1x1" alt="<?php echo get_bloginfo( 'name' ); ?>" style="
-                <?php if (get_theme_mod( 'logo_settings' )){
-                    echo "background-image:url(" . get_theme_mod( 'avatar_settings') . ");"; 
-                }?>" ></div>
+            
+            <?php if (get_theme_mod( 'logo_settings' )){
+                $avatar = get_theme_mod( 'avatar_settings');
+                ?>
+                <div data-load="<?php echo $avatar; ?>" class="block block__1x1" alt="<?php echo get_bloginfo( 'name' ); ?>" style="background-image:url(<?php echo $avatar; ?>);" ></div>
+                <?php
+            }?>
+            
             <div class="block block__1x1 block__color--brown">
                 <h4><i>Skill</i></h4>
                 <h2><?php echo get_theme_mod( 'about_skill_2_settings' ); ?></h2>

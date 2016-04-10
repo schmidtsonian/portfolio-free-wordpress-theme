@@ -19,9 +19,11 @@ get_header(); the_post(); ?>
             
             <div class="cols__2 page__single__col">
                 <header>
-                    <?php if( has_post_thumbnail()){ ?>
-
-                        <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>" alt="<?php the_title(); ?>" class="page__single__image">
+                    <?php if( has_post_thumbnail()){ 
+                        $thumb = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                        ?>
+                        
+                        <img data-load="<?php echo $thumb; ?>" src="<?php echo $thumb; ?>" alt="<?php the_title(); ?>" class="page__single__image">
                     <?php } ?>
                     <h1 class="font-title__page"><?php the_title(); ?></h1>
                 </header>

@@ -30,8 +30,8 @@ get_header(); ?>
                 
                     <?php
                     if( has_post_thumbnail() ){
-                        
-                        ?><img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>", width="", height="", alt="<?php the_title(); ?>"><?php
+                        $thumb = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                        ?><img data-load="<?php echo $thumb; ?>" src="<?php echo $thumb; ?>", width="", height="", alt="<?php the_title(); ?>"><?php
                     }
                     
                     ?>
