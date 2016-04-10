@@ -4,3 +4,11 @@
     z-index: 999;
     left: -100%;
 }
+.overlay-loader--bar{
+    display: block;
+    position: absolute;
+    height: 60px;
+    left: 0;
+    top: 0;
+    background-color: $color-red;
+}

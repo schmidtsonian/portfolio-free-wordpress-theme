@@ -9,6 +9,7 @@ module common{
         
         private result: JQuery;
         private overlay: JQuery;
+        private overlayBar: JQuery;
         private body: JQuery;
         
         constructor() {
@@ -16,6 +17,7 @@ module common{
             this.container = '#js-main-container';
             this.result = $( '#js-res' );
             this.overlay = $( '#js-overlay-loader' );
+            this.overlayBar = $( '#js-overlay-loader--bar' );
             this.body = $( 'body' );
         }
         
@@ -23,10 +25,14 @@ module common{
             
             var defer = $.Deferred();
             
+            
             this.body.css( { 'overflow': 'hidden' } );
             this.body.scrollTop( 0 );
+            
+            TweenMax.killTweensOf( this.overlayBar );
+            TweenMax.set( this.overlayBar, { width: 0, y: 0 } );
             TweenMax.set( this.overlay, { left: 0 } );
-            TweenMax.to(this.result, 0.25, { y: "100px", opacity: 0, onComplete: () => { defer.resolve(); } });
+            TweenMax.to( this.result, 0.25, { y: "100px", opacity: 0, onComplete: () => { defer.resolve(); } });
     
             return defer.promise();    
         }
@@ -35,13 +41,28 @@ module common{
             
             var defer = $.Deferred();
             
-            TweenMax.to(this.result, 0.25, { y: 0, opacity: 1, onComplete: () => { 
-                TweenMax.set( this.overlay, { left: '-100%' } );
-                this.body.css( { 'overflow': 'auto' } );
-                defer.resolve(); 
-            } });
+            this.animateFillBar( 100 )
+                .then( () => {
+                    TweenLite.to( this.overlayBar, 0.25, {y: "-60px" } );
+                    TweenLite.to( this.result, 0.25, { delay: 0.25, y: 0, opacity: 1, onComplete: () => {
+                
+                        TweenMax.set( this.overlay, { left: '-100%' } );
+                        this.body.css( { 'overflow': 'auto' } );
+                        defer.resolve(); 
+                    } });
+            });
     
             return defer.promise();    
+        }
+        
+        private animateFillBar (toPercent: number) : JQueryPromise<{}> {
+            
+            var defer = $.Deferred();
+            
+            TweenMax.killTweensOf( this.overlayBar );
+            TweenLite.to( this.overlayBar, 0.25, {width: toPercent + "%", onComplete: defer.resolve } );
+            
+            return defer.promise();
         }
         
         private processImages () : JQueryPromise<{}> {
@@ -56,6 +77,8 @@ module common{
                 img.src = src;
                 img.onload = () => { 
                     count++;
+                    this.animateFillBar( (count/images.length ) * 100 );
+                    
                     if( count >= images.length ){
                         defer.resolve();
                     }
