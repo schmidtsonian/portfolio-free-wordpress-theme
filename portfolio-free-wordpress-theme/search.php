@@ -19,7 +19,7 @@ get_header(); ?>
             <h1>search</h1>
             <div class="cols__2 page__blog__col">
                 
-                <a href="#" class="block block__2--post", title="Title post">
+                <a href="#" class="page-load block block__2--post", title="Title post">
                     <img src="http://placehold.it/450x250", width="", height="", alt="Title post">
                     <h2 class="font-title__thumb">
                         Title post

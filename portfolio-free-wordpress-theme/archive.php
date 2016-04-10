@@ -18,7 +18,7 @@ get_header(); ?>
             <div class="cols__2 page__blog__col">
                 <!--<h1 class="clearfix">title</h1>-->
                 
-                <a href="#" class="block block__2--post", title="Title post">
+                <a href="#" class="page-load block block__2--post", title="Title post">
                     <img src="http://placehold.it/450x250", width="", height="", alt="Title post">
                     <h2 class="font-title__thumb">
                         archive
@@ -27,7 +27,7 @@ get_header(); ?>
                         1 Laboris non cillum officia tempor eu do sint.
                     </p>
                 </a>
-                <a href="#" class="block block__2--post", title="Title post">
+                <a href="#" class="page-load block block__2--post", title="Title post">
                     <img src="http://placehold.it/450x250", width="", height="", alt="Title post">
                     <h2 class="font-title__thumb">
                         archive
@@ -36,7 +36,7 @@ get_header(); ?>
                         1 Laboris non cillum officia tempor eu do sint.
                     </p>
                 </a>
-                <a href="#" class="block block__2--post", title="Title post">
+                <a href="#" class="page-load block block__2--post", title="Title post">
                     <img src="http://placehold.it/450x250", width="", height="", alt="Title post">
                     <h2 class="font-title__thumb">
                         archive
@@ -45,7 +45,7 @@ get_header(); ?>
                         1 Laboris non cillum officia tempor eu do sint.
                     </p>
                 </a>
-                <a href="#" class="block block__2--post", title="Title post">
+                <a href="#" class="page-load block block__2--post", title="Title post">
                     <img src="http://placehold.it/450x250", width="", height="", alt="Title post">
                     <h2 class="font-title__thumb">
                         archive

@@ -26,7 +26,7 @@ get_header(); ?>
                     
                     while ( have_posts() ) : the_post();
                 ?>
-                <a href="<?php the_permalink(); ?>" class="block block__2--post", title="<?php the_title(); ?>">
+                <a href="<?php the_permalink(); ?>" class="page-load block block__2--post", title="<?php the_title(); ?>">
                 
                     <?php
                     if( has_post_thumbnail() ){
