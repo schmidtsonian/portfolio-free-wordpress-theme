@@ -38,12 +38,15 @@ module common{
             TweenMax.set( this.overlayBar, { width: 0, y: 0 } );
             TweenMax.set( this.overlay, { left: 0 } );
 
-            TweenLite.to(this.overlayBg, 0.25, {opacity: .2, onComplete: () => {
+            TweenLite.to(this.overlayBg, 0.05, {opacity: .2, onComplete: () => {
                     
                 // FIX THIS!
+                this.animateFillBar( 1 ); 
                 this.body.stop().animate({scrollTop:0}, '250', 'swing', () => { 
                 
-                    TweenMax.to( this.result, 0.25, { y: "100px", opacity: 0, onComplete: () => { defer.resolve(); } });
+                    TweenMax.to( this.result, 0.05, { y: "100px", opacity: 0, onComplete: () => {
+                        defer.resolve(); 
+                    } });
             
                 });
             }});
@@ -117,7 +120,7 @@ module common{
         }
         
         private load( path: string ) : JQueryPromise<{}> {
-            console.log(path)
+            
             var defer = $.Deferred();
             this.result.load( "/" + path + ' ' + this.container, () => {
                 

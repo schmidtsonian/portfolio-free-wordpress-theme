@@ -26,7 +26,7 @@ get_header(); ?>
                     $categories = get_terms( 'cats');
                     foreach ( $categories as $value ) { ?>
                         <li>
-                            <a href="#" title="<?php echo $value->name; ?>" class="page-load">
+                            <a title="<?php echo $value->name; ?>">
                                 <?php echo $value->name; ?>
                             </a>
                         </li>
