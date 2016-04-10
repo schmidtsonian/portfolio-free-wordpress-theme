@@ -25,6 +25,7 @@
         </footer>
         
         <div id="js-overlay-loader" class="full overlay-loader">
+            <span id="js-overlay-loader--bg" class="overlay-loader--bg full"></span>
             <span id="js-overlay-loader--bar" class="overlay-loader--bar"></span>
         </div>
         <?php wp_footer(); ?>
