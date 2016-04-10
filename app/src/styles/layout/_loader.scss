@@ -1,7 +1,6 @@
 .overlay-loader{
-    background: red;
     position: fixed;
     top: 0;
     z-index: 999;
-    left: 100%;
+    left: -100%;
 }

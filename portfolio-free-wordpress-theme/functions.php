@@ -329,10 +329,37 @@ if( !is_admin()){
 
 add_filter('next_posts_link_attributes', 'posts_link_attributes_1');
 add_filter('previous_posts_link_attributes', 'posts_link_attributes_2');
-
+add_filter( 'get_pagenum_link', 'user_trailingslashit' );
 function posts_link_attributes_1() {
     return 'class="page-load"';
 }
 function posts_link_attributes_2() {
     return 'class="page-load"';
+}
+
+
+function next_post_url($in_same_cat=false, $excluded_categories = '', $display=true) {
+
+    $post = get_next_post($in_same_cat, $excluded_categories);
+
+    if ($post) {
+        $url = get_permalink($post->ID);
+        if($display) {
+            echo $url;
+        }
+        return $url;
+    }
+}
+
+function previous_post_url($in_same_cat=false, $excluded_categories = '', $display=true) {
+
+    $post = get_previous_post($in_same_cat, $excluded_categories);
+
+    if ($post) {
+        $url = get_permalink($post->ID);
+        if($display) {
+            echo $url;
+        }
+        return $url;
+    }
 }

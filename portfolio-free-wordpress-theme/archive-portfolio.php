@@ -65,7 +65,7 @@ get_header(); ?>
                         $thumb = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
                     }
                     ?>
-                    <a title="<?php the_title(); ?>" href="<?php echo get_permalink(); ?>" class="page-load block block__<?php echo $class; ?>--post-thumb block__color--withe" style="background-image:url(<?php echo $thumb; ?>);">
+                    <a title="<?php the_title(); ?>" href="<?php echo str_replace(get_site_url(), '', get_permalink()); ?>" class="page-load block block__<?php echo $class; ?>--post-thumb block__color--withe" style="background-image:url(<?php echo $thumb; ?>);">
                         <strong class="block__caption">
                             <span><?php the_title(); ?></span>
                         </strong>

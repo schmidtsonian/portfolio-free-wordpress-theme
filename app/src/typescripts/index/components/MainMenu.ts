@@ -12,7 +12,7 @@ module components {
             
             this.btMenu = bt;
             this.container = container;
-            this.btLinks = $("a.pushstate", this.container);
+            this.btLinks = $("a.page-load", this.container);
             
             this.isOpened = false;
             

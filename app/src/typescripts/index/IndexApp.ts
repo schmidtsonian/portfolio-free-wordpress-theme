@@ -49,16 +49,11 @@ module index {
             
             this.mainMenu = new MainMenu($("#js-main-header__button"), $("#js-main-header__nav"));
 			
-            var mainContainer = $("#js-main-container");
             $(document).on("click", "a.page-load", (e: JQueryEventObject) => {
                 e.preventDefault();
                 var path = $(e.currentTarget).attr("href");
-                this.router.navigate(path);
-                this.loader.load(path);
+                this.loader.load(path, () => { this.router.navigate(path): } );
                 
-                // $("#js-main-container").load( path + " #js-main-container", () => {
-                //     // console.log("done!");
-                // } );
             })
             // this.router.check();
         }

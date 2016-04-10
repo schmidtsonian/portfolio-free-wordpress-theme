@@ -1,6 +1,8 @@
         
+            </div>
+            <!-- / Main Container -->
         </div>
-        <!-- / Main Container -->
+        <!-- / Res -->
 
         <!-- Main Foote -->
         <footer class="main-footer">
@@ -22,7 +24,7 @@
             <!-- /Sidebar footer copyright -->
         </footer>
         
-        <div id="#js-overlay-loader" class="full overlay-loader"></div>
+        <div id="js-overlay-loader" class="full overlay-loader"></div>
         <?php wp_footer(); ?>
         <script src="<?php bloginfo('template_url'); ?>/js/vendor.js"></script>
         <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>

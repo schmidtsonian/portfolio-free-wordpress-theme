@@ -40,4 +40,5 @@
         <!-- /Main Header -->
         
         <!-- Main Container -->
-        <div id="js-main-container" class="main-container">
+        <div id="js-res">
+            <div id="js-main-container" class="main-container">

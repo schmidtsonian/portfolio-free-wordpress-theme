@@ -26,7 +26,7 @@ get_header(); ?>
                     
                     while ( have_posts() ) : the_post();
                 ?>
-                <a href="<?php the_permalink(); ?>" class="page-load block block__2--post", title="<?php the_title(); ?>">
+                <a href="<?php echo str_replace(get_site_url(), '', get_permalink()); ?>" class="page-load block block__2--post", title="<?php the_title(); ?>">
                 
                     <?php
                     if( has_post_thumbnail() ){
@@ -44,10 +44,12 @@ get_header(); ?>
                 <?php
                     endwhile;
                     
-                    next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentyeleven' ) );
-                    previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) );
+                    $next = get_next_posts_link( '<span class="meta-nav">&larr;</span> Older posts' );
+                    $previus = get_previous_posts_link( 'Newer posts <span class="meta-nav">&rarr;</span>' );
                     wp_reset_query();
                 ?>
+                <?php echo str_replace(get_site_url(), '', $next); ?>
+                <?php echo str_replace(get_site_url(), '', $previus); ?>
             </div>
             <div class="cols__2 page__blog__col">
                 <?php get_sidebar("standar"); ?>

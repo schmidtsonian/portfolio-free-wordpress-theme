@@ -5,19 +5,34 @@ module common{
     
     export class Loader {
         
-        private element: string;
+        private container: string;
+        
         private result: JQuery;
+        private overlay: JQuery;
+        private body: JQuery;
         
         constructor() {
             
-            this.element = "#js-main-container";
-            this.result = $( this.element );
+            this.container = '#js-main-container';
+            this.result = $( '#js-res' );
+            this.overlay = $( '#js-overlay-loader' );
+            this.body = $( 'body' );
         }
         
-        load ( path: string ) : void{
+        load ( path: string, onLoad: Function ) : void {
             
-            this.result.load( path + " " + this.element, () => {
-                // console.log("done!");
+            this.body.css( { 'overflow': 'none' } );
+            this.body.scrollTop( 0 );
+            TweenMax.set( this.overlay, { left: 0 } );
+            
+            this.result.load( path + ' ' + this.container, () => {
+                onLoad();
+                TweenMax.to( this.overlay, 0.25, {
+                    left: '-100%', 
+                    onComplete: () =>  { 
+                        this.body.css( { 'overflow': 'auto' } );
+                    } 
+                });
             } );
         }
     }
