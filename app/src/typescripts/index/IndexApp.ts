@@ -2,9 +2,8 @@
 /// <reference path="../definitions/jquery/jquery.d.ts" />
 
 /// <reference path="../common/Router.ts" />
-/// <reference path="../common/ViewManager.ts" />
-/// <reference path="../common/View.ts" />
 /// <reference path="../common/Loader.ts" />
+/// <reference path="../common/FilterGrid.ts" />
 
 /// <reference path="components/MainMenu.ts" />
 
@@ -13,47 +12,36 @@
 module index {
     
     import Router = common.Router;
-    import ViewManager = common.ViewManager;
     import Loader = common.Loader;
-    // import View = common.View;
+    import FilterGrid = common.FilterGrid;
     
     import MainMenu = components.MainMenu;
     
-    // import HomeView = views.Home;
-
-    export enum MainViews {
-        // HomeView,
-        // AboutMeView,
-        // SomeCode
-    }
+    
 	export class IndexApp {
 		
         private router:Router;
-        // private viewManager:ViewManager;
         private loader:Loader;
+        private filterGrid:FilterGrid;
         
         private mainMenu:MainMenu;
-        
-        // private HomeView:HomeView;
-        // private AboutMeView:View;
-        // private SomeCode:View;
         
 		constructor () {
             
             this.router = new Router();
-            // this.viewManager = new ViewManager();
             this.loader = new Loader();
+            this.filterGrid = new FilterGrid();
 		}
 
 		init ():void {
             
             this.mainMenu = new MainMenu($("#js-main-header__button"), $("#js-main-header__nav"));
-			
+			this.filterGrid.init();
+            
             $(document).on("click", "a.page-load", (e: JQueryEventObject) => {
                 e.preventDefault();
                 var path = $(e.currentTarget).attr("href");
                 this.router.navigate(path);
-                
             });
             
             this.router

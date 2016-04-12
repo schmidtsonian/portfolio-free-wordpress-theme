@@ -363,3 +363,4 @@ function previous_post_url($in_same_cat=false, $excluded_categories = '', $displ
         return $url;
     }
 }
+

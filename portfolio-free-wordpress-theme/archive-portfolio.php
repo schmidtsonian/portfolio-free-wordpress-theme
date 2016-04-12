@@ -20,13 +20,13 @@ get_header(); ?>
             <!-- Nav filters -->
             <nav class="page__nav-filters">
                 <ul>
-                    <li><a href="#" title="all" class="page-load active">all</a></li>
+                    <li><a href="#all" title="all" class="filter-grid active" dala-filter="all">all</a></li>
                     
                     <?php
                     $categories = get_terms( 'cats');
                     foreach ( $categories as $value ) { ?>
                         <li>
-                            <a title="<?php echo $value->name; ?>">
+                            <a href="#<?php echo strtolower( $value->name ); ?>" title="<?php echo $value->name; ?>" data-filter="<?php echo strtolower( $value->name ); ?>" class="filter-grid">
                                 <?php echo $value->name; ?>
                             </a>
                         </li>
@@ -64,8 +64,16 @@ get_header(); ?>
                         
                         $thumb = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
                     }
+                    $cats = wp_get_post_terms(get_the_ID(), 'cats');
+                    $terms = [];
+                    
+                    foreach( $cats as $val ) {
+                        array_push($terms, $val->name);
+                    }
+
                     ?>
-                    <a data-load="<?php echo $thumb; ?>" title="<?php the_title(); ?>" href="<?php echo str_replace(get_site_url(), '', get_permalink()); ?>" class="page-load block block__<?php echo $class; ?>--post-thumb block__color--withe" style="background-image:url(<?php echo $thumb; ?>);">
+                    
+                    <a data-terms='<?php echo json_encode( $terms ); ?>' data-load="<?php echo $thumb; ?>" title="<?php the_title(); ?>" href="<?php echo str_replace(get_site_url(), '', get_permalink()); ?>" class="page-load block block__<?php echo $class; ?>--post-thumb block__color--withe" style="background-image:url(<?php echo $thumb; ?>);">
                         <strong class="block__caption">
                             <span><?php the_title(); ?></span>
                         </strong>
