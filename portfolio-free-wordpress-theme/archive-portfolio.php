@@ -20,7 +20,7 @@ get_header(); ?>
             <!-- Nav filters -->
             <nav class="page__nav-filters">
                 <ul>
-                    <li><a href="#all" title="all" class="filter-grid active" dala-filter="all">all</a></li>
+                    <li><a href="#all" title="all" class="filter-grid active" data-filter="all">all</a></li>
                     
                     <?php
                     $categories = get_terms( 'cats');
@@ -73,7 +73,7 @@ get_header(); ?>
 
                     ?>
                     
-                    <a data-terms='<?php echo json_encode( $terms ); ?>' data-load="<?php echo $thumb; ?>" title="<?php the_title(); ?>" href="<?php echo str_replace(get_site_url(), '', get_permalink()); ?>" class="page-load block block__<?php echo $class; ?>--post-thumb block__color--withe" style="background-image:url(<?php echo $thumb; ?>);">
+                    <a data-terms='<?php echo strtolower(json_encode( $terms )); ?>' data-load="<?php echo $thumb; ?>" title="<?php the_title(); ?>" href="<?php echo str_replace(get_site_url(), '', get_permalink()); ?>" class="page-load block block__<?php echo $class; ?>--post-thumb block__color--withe" style="background-image:url(<?php echo $thumb; ?>);">
                         <strong class="block__caption">
                             <span><?php the_title(); ?></span>
                         </strong>

@@ -14,25 +14,28 @@ module common {
            $(document).on("click", "a.filter-grid", (e: JQueryEventObject) => {
 
                 e.preventDefault();
-                // var path = $(e.currentTarget).attr("href");
                 
-                var filter = $( e.currentTarget ).data('filter');
+                var target = $( e.currentTarget );
+                var filter = target.data('filter');
                 var terms = $("[data-terms]");
                 
-                for (var index = 0; index < terms.length; index++) {
-                    var element = $(terms[index]).data("terms");
-                    console.log(element);
-                }
+                $("a.filter-grid").removeClass("active");
+                target.addClass("active");
                 
+                if( filter == 'all'){
+                    terms.css({"display": "block"});
+                }else{
+                    for (var index = 0; index < terms.length; index++) {
+                        var selector = $(terms[index]);
+                        var term = selector.data("terms");
+                        if(term.indexOf( filter ) <= -1){
+                            selector.css({"display": "none"});
+                        }else{
+                            selector.css({"display": "block"});
+                        }
+                    }
+                }
             });
        }
-       
-    //    bind (): void {
-           
-    //    }
-       
-    //    unbind (): void {
-           
-    //    }
     }
 }
